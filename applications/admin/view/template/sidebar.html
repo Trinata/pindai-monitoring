@@ -1,0 +1,139 @@
+	
+<!--MAIN NAVIGATION-->
+<!--===================================================-->
+<nav id="mainnav-container">
+	<div id="mainnav">
+
+		<!--Shortcut buttons-->
+		<!--================================-->
+		<div id="mainnav-shortcut">
+			
+		</div>
+		<!--================================-->
+		<!--End shortcut buttons-->
+		<!--{pr($page.function)}
+		{pr($page.page)}-->
+
+		<!--Menu-->
+		<!--================================-->
+		<div id="mainnav-menu-wrap">
+			<div class="nano">
+				<div class="nano-content">
+					<ul id="mainnav-menu" class="list-group">
+						
+						<li class="list-header">Home</li>
+
+						<li class="{if $page.page eq 'home' && $page.function eq 'index'}active-link{/if}">
+							<a href="{$basedomain}home">
+								<i class="fa fa-dashboard"></i>
+								<span class="menu-title">
+									Dashboard
+								</span>
+							</a>
+						</li>
+						<!--Category name-->
+						<li class="list-header">CMS TOKO</li>
+			
+						<!--Menu list item-->
+						<li>
+							<a href="#">
+								<i class="fa fa-newspaper-o"></i>
+								<span class="menu-title">PRODUCT</span>
+								<i class="arrow"></i>
+							</a>
+			
+							<!--Submenu-->
+							<ul class="collapse {if $page.page eq 'news'}in{/if}">
+
+								<li class="{if $page.function eq 'addnews'}active-link{/if}"><a href="{$basedomain}product/listCatProduct">Category Product</a></li>
+								<li class="{if $page.function eq 'addnews'}active-link{/if}"><a href="{$basedomain}product/formAddProduct">Add Product</a></li>
+								<li class="{if $page.page eq 'news' && $page.function eq 'index'}active-link{/if}"><a href="{$basedomain}product">Product List</a></li>
+							</ul>
+						</li>
+						<li class="{if $page.page eq 'gallery'}active-link{/if}">
+							<a href="{$basedomain}gallery">
+								<i class="fa fa-picture-o"></i>
+								<span class="menu-title">
+									Order
+								</span>
+							</a>
+						</li>
+						<li class="{if $page.page eq 'home' && $page.function eq 'glosariumlist'}active-link{/if}">
+							<a href="{$basedomain}home/glosariumlist">
+								<i class="fa fa-book"></i>
+								<span class="menu-title">Customer</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="fa fa-newspaper-o"></i>
+								<span class="menu-title">Blog</span>
+								<i class="arrow"></i>
+							</a>
+			
+							<!--Submenu-->
+							<ul class="collapse {if $page.page eq 'news'}in{/if}">
+
+								<li class="{if $page.function eq 'addnews'}active-link{/if}"><a href="{$basedomain}blog/formAddBlog">Add Blog</a></li>
+								<li class="{if $page.page eq 'news' && $page.function eq 'index'}active-link{/if}"><a href="{$basedomain}news">Blog List</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">
+								<i class="fa fa-newspaper-o"></i>
+								<span class="menu-title">Theme & Design</span>
+								<i class="arrow"></i>
+							</a>
+			
+							<!--Submenu-->
+							<ul class="collapse {if $page.page eq 'news'}in{/if}">
+
+								<li class="{if $page.function eq 'addnews'}active-link{/if}"><a href="{$basedomain}news/addnews">Setting Theme</a></li>
+								<li class="{if $page.page eq 'news' && $page.function eq 'index'}active-link{/if}"><a href="{$basedomain}news">Menu</a></li>
+							</ul>
+						</li>
+						{*}<li class="{if $page.page eq 'home' && $page.function eq 'externalLink'}active-link{/if}">
+							<a href="{$basedomain}home/externalLink">
+								<i class="fa fa-quote-left"></i>
+								<span class="menu-title">External Link</span>
+							</a>
+						</li>{/*}
+						
+			
+						<!--Category name-->
+						
+						<!-- <li class="list-divider"></li> -->
+			
+						<!--Category name-->
+						<li class="list-header">User</li>
+			
+						<!--Menu list item-->
+						<li>
+							<a href="#">
+								<i class="fa fa-group"></i>
+								<span class="menu-title">Manage Users</span>
+								<i class="arrow"></i>
+							</a>
+			
+							<!--Submenu-->
+							<ul class="collapse {if $page.page eq 'user'}in{/if}">
+								<li class="{if $page.page eq 'user' && $page.function eq 'index'}active-link{/if}"><a href="{$basedomain}user">User list</a></li>
+								<li class="{if $page.page eq 'home' && $page.function eq 'wilayah'}active-link{/if}">
+									<a href="{$basedomain}home/wilayah">
+										Wilayah
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+		<!--================================-->
+		<!--End menu-->
+
+	</div>
+</nav>
+<!--===================================================-->
+<!--END MAIN NAVIGATION-->
