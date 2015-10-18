@@ -1,10 +1,12 @@
 # Build and Release Folders
-bin/
-bin-debug/
-bin-release/
+applications/default/config/config.php
+applications/default/config/access.php
+applications/admin/config/config.php
+applications/admin/cache/*
+public_assets/*
 
 # Other files and folders
-.settings/
+
 
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
