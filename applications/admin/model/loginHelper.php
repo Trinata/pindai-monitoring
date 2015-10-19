@@ -14,7 +14,7 @@ class loginHelper extends Database {
 		$username = _p('username');
 		$password = _p('password');
 		
-		$sql = "SELECT * FROM ck_user WHERE username = '{$username}' LIMIT 1";
+		$sql = "SELECT * FROM ck_admin_member WHERE username = '{$username}' LIMIT 1";
 		// pr($sql);
 		$res = $this->fetch($sql,false);
 		

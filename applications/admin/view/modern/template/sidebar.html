@@ -1,0 +1,104 @@
+	
+<!--MAIN NAVIGATION-->
+<!--===================================================-->
+<nav id="mainnav-container">
+	<div id="mainnav">
+
+		<!--Shortcut buttons-->
+		<!--================================-->
+		<div id="mainnav-shortcut">
+			
+		</div>
+		<!--================================-->
+		<!--End shortcut buttons-->
+		<!--{pr($page.function)}
+		{pr($page.page)}-->
+
+		<!--Menu-->
+		<!--================================-->
+		<div id="mainnav-menu-wrap">
+			<div class="nano">
+				<div class="nano-content">
+					<ul id="mainnav-menu" class="list-group">
+						
+						<li class="list-header">Dashboard</li>
+
+						<li class="{if $page.page eq 'home' && $page.function eq 'index'}active-link{/if}">
+							<a href="{$basedomain}home">
+								<i class="fa fa-inbox"></i>
+								<span class="menu-title">
+									Dashboard
+								</span>
+							</a>
+						</li>
+						{*}
+						<li class="{if $page.page eq 'home' && $page.function eq 'statistik'}active-link{/if}">
+							<a href="{$basedomain}home/statistik">
+								<i class="fa fa-bar-chart-o"></i>
+								<span class="menu-title">Statistik Pengaduan </span>
+							</a>
+			
+						</li>{/*}
+						<!--Category name-->
+						<li class="list-header">Master</li>
+						<li>
+							<a href="#">
+									<i class="fa fa-group"></i>
+									<span class="menu-title">Master</span>
+									<i class="arrow"></i>
+							</a>
+							<ul class="collapse">
+								<li class=""><a href="{$basedomain}pengaturan_admin">User</a></li>
+								<li class=""><a href="{$basedomain}pengaturan_admin/waktukriteria">Company</a></li>
+								<li class=""><a href="{$basedomain}pengaturan_admin/ubahkonten">Industry</a></li>
+								<li class=""><a href="{$basedomain}pengaturan_admin/ruanglingkup">Journalist</a></li>
+								<li class=""><a href="{$basedomain}pengaturan_admin/ruanglingkup">Cat Media</a></li>
+								<li class=""><a href="{$basedomain}pengaturan_admin/ruanglingkup">Media</a></li>
+								<li class=""><a href="{$basedomain}pengaturan_admin/ruanglingkup">Mindshare</a></li>
+								<li class=""><a href="{$basedomain}pengaturan_admin/ruanglingkup">Rubric</a></li>
+								<li class=""><a href="{$basedomain}pengaturan_admin/ruanglingkup">Source</a></li>
+								<li class=""><a href="{$basedomain}pengaturan_admin/ruanglingkup">Topik</a></li>
+							</ul>	
+						</li>
+						
+						<!--Category name-->
+						<li class="list-header">Content</li>
+						
+						<!--Menu list item-->
+						<li>
+							<a href="#">
+								<i class="fa fa-group"></i>
+								<span class="menu-title">Content Management</span>
+								<i class="arrow"></i>
+							</a>
+			
+							<!--Submenu-->
+							<ul class="collapse">
+								<li class=""><a href="{$basedomain}pengaturan_admin">Content Area</a></li>
+								<li class=""><a href="{$basedomain}pengaturan_admin/waktukriteria">Analysis Area</a></li>
+								<li class=""><a href="{$basedomain}pengaturan_admin/ubahkonten">Approved List</a></li>
+								<li class=""><a href="{$basedomain}pengaturan_admin/ruanglingkup">Summary Area</a></li>
+							</ul>
+						</li>
+
+						<li class="list-header">Report</li>
+			
+						<li class="{if $page.page eq 'home' && $page.function eq 'statistik'}active-link{/if}">
+							<a href="{$basedomain}home/statistik">
+								<i class="fa fa-bar-chart-o"></i>
+								<span class="menu-title">Client Report</span>
+							</a>
+			
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+		<!--================================-->
+		<!--End menu-->
+
+	</div>
+</nav>
+<!--===================================================-->
+<!--END MAIN NAVIGATION-->

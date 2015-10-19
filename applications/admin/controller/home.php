@@ -29,7 +29,8 @@ class home extends Controller {
 	public function index(){
 		
 		// $run = $this->contentHelper->test();
-		return $this->loadView('home/home');
+		
+		return $this->loadView(CODEKIR_TEMPLATE . '/home/home');
 
 	}
 	
