@@ -23,7 +23,7 @@ class login extends Controller {
 	{
 		global $CONFIG;
 		// pr($_SESSION);
-		return $this->loadView(CODEKIR_TEMPLATE .'/login');
+		return $this->loadView(CODEKIR_TEMPLATE .'/home/login');
 	}
 	
 	function local()

@@ -1,0 +1,42 @@
+
+
+{include file="view/$CODEKIR_TEMPLATE/master_template/meta.html"}
+
+
+<body>
+	<script>
+		var basedomain = "{$basedomain}";
+	</script>
+	
+	{if ($admin)}
+	<div id="container" class="effect mainnav-lg">
+
+	
+
+			
+			{include file= "view/$CODEKIR_TEMPLATE/master_template/header.html"} 
+
+			<div class="boxed">
+
+				<!--CONTENT CONTAINER-->
+				<!--===================================================-->
+				<div id="content-container">
+					
+					
+					{$content}
+
+				</div>
+			{include file= "view/$CODEKIR_TEMPLATE/master_template/sidebar.html"}
+
+			{include file= "view/$CODEKIR_TEMPLATE/master_template/top-bar.html"}
+
+			</div>
+			{include file= "view/$CODEKIR_TEMPLATE/master_template/footer.html"}
+			{include file= "view/$CODEKIR_TEMPLATE/master_template/jsplugin.html"}
+	</div>
+	{else}
+		{$content}
+		{include file= "view/$CODEKIR_TEMPLATE/master_template/jsplugin.html"}
+
+	{/if}			
+

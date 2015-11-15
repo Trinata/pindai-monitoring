@@ -1,0 +1,479 @@
+
+<!--Page Title-->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<div id="page-title">
+	<h1 class="page-header text-overflow">Company</h1>
+	
+	<!--Searchbox-->
+	<!-- <div class="searchbox">
+		<div class="input-group custom-search-form">
+			<input type="text" class="form-control" placeholder="Search..">
+			<span class="input-group-btn">
+				<button class="text-muted" type="button"><i class="fa fa-search"></i></button>
+			</span>
+		</div>
+	</div> -->
+</div>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!--End page title-->
+
+<!--Breadcrumb-->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+	<li><a href="{$basedomain}">Home</a></li>
+	<li><a href="{$basedomain}">Product</a></li>
+	<li class="active">List Product</li>
+</ol>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!--End breadcrumb-->
+
+<!--Page content-->
+<!--===================================================-->
+<div id="page-content">
+	<div class="tab-base">
+
+		<!--Nav Tabs-->
+		<ul class="nav nav-tabs">
+			<li>
+				<a href="{$basedomain}analysisArea">Daftar Data</a>
+			</li>
+			<li  class="active">
+				<a href="{$basedomain}contentArea/create">Add Column Data</a>
+			</li>
+			<li>
+				<a href="{$basedomain}analysisArea/search">Cari Data</a>
+			</li>
+		</ul>
+
+		<div class="tab-content">
+			
+		<div class="row form-horizontal">
+
+			<div class="col-md-12">
+			<div class="col-md-5">
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="">Nama</label>
+					<div class="col-sm-8">
+							<input type="text" class="form-control" placeholder="Nama">
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="row form-horizontal">
+
+			<div class="col-md-12">
+			<div class="col-md-5">
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="">Industry</label>
+					<div class="col-sm-8">
+						<select class="selectpicker">
+							<option>--Pilih Industry--</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+
+		<div class="row form-horizontal">
+
+			<div class="col-md-12">
+			<div class="col-md-5">
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="">Template</label>
+					<div class="col-sm-8">
+						<select class="selectpicker">
+							<option>--Pilih Template--</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="row form-horizontal">
+
+			<div class="col-md-12">
+			<div class="col-md-5">
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="">Bg Color</label>
+					<div class="col-sm-8">
+							<input type="color" class="form-control" placeholder="Bg Color">
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="row form-horizontal">
+
+			<div class="col-md-12">
+			<div class="col-md-5">
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="">Header Color</label>
+					<div class="col-sm-8">
+							<input type="color" class="form-control" placeholder="Header Color">
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="row form-horizontal">
+
+			<div class="col-md-12">
+			<div class="col-md-5">
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="">Stack Color</label>
+					<div class="col-sm-8">
+							<input type="color" class="form-control" placeholder="Stack Color">
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+
+		<div class="row form-horizontal">
+
+			<div class="col-md-12">
+			<div class="col-md-5">
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="">Font Color Menu</label>
+					<div class="col-sm-8">
+							<input type="color" class="form-control" placeholder="Font Color Menu">
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="row form-horizontal">
+
+			<div class="col-md-12">
+			<div class="col-md-5">
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="">Font Color Menu Selected</label>
+					<div class="col-sm-8">
+							<input type="color" class="form-control" placeholder="Font Color Menu Selected">
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+
+		<div class="row form-horizontal">
+
+			<div class="col-md-12">
+			<div class="col-md-5">
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="">Email</label>
+					<div class="col-sm-8">
+							<input type="text" class="form-control" placeholder="Email">
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+
+		<div class="row form-horizontal">
+			<div class="col-md-12">
+			<div class="col-md-9">
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="">Info Field</label>
+					<div class="col-md-10">
+						<div class="col-md-3 form-block">
+
+							<!-- Checkboxes -->
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Judul</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Wartawan</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Topik</label>
+							</div>
+
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Judul Youtube</label>
+							</div>
+
+						</div>
+						<div class="col-md-3 form-block">
+
+							<!-- Checkboxes -->
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Tanggal</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Muatan Berita</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Nilai Iklan</label>
+							</div>
+
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Durasi Youtube</label>
+							</div>
+
+						</div>
+
+						<div class="col-md-3 form-block">
+
+							<!-- Checkboxes -->
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Media</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Narasumber</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Penanggungjawab</label>
+							</div>
+
+						</div>
+						<div class="col-md-3 form-block">
+
+							<!-- Checkboxes -->
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Halaman</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Rubric</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Edisi</label>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			 </div>
+			</div>
+		</div>
+		<div class="row form-horizontal">
+			<div class="col-md-12">
+			<div class="col-md-9">
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="">Search Field</label>
+					<div class="col-md-10">
+						<div class="col-md-3 form-block">
+
+							<!-- Checkboxes -->
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Internet</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Tabloid</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Social Media</label>
+							</div>
+
+						</div>
+						<div class="col-md-3 form-block">
+
+							<!-- Checkboxes -->
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Majalah</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Televisi</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Call Center</label>
+							</div>
+
+
+						</div>
+
+						<div class="col-md-3 form-block">
+
+							<!-- Checkboxes -->
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Koran Nasional</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Radio</label>
+							</div>
+
+						</div>
+						<div class="col-md-3 form-block">
+
+							<!-- Checkboxes -->
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Koran Regional</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Koran Asing</label>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			 </div>
+			</div>
+		</div>
+
+		<div class="row form-horizontal">
+			<div class="col-md-12">
+			<div class="col-md-9">
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="">Menu Statistic</label>
+					<div class="col-md-10">
+						<div class="col-md-3 form-block">
+
+							<!-- Checkboxes -->
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Mindshare</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Tone</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Rubric</label>
+							</div>
+
+						</div>
+						<div class="col-md-3 form-block">
+
+							<!-- Checkboxes -->
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Media Category</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Topik</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Media</label>
+							</div>
+
+
+						</div>
+
+						<div class="col-md-3 form-block">
+
+							<!-- Checkboxes -->
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> PR Value</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Source</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Journalist</label>
+							</div>
+
+						</div>
+						<div class="col-md-3 form-block">
+
+							<!-- Checkboxes -->
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Mention Percentage</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> TV Program</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Quotes</label>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			 </div>
+			</div>
+		</div>
+
+
+
+		<div class="row form-horizontal">
+
+			<div class="col-md-12">
+			<div class="col-md-5">
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="">Login Page</label>
+					<div class="col-sm-8">
+						<select class="selectpicker">
+							<option>Default</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="row form-horizontal">
+
+			<div class="col-md-12">
+			<div class="col-md-5">
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="">Logo</label>
+					<div class="col-sm-8">
+						<span class="pull-left btn btn-default btn-file ">
+							Browse File Logo... <input type="file" >
+						</span>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+
+		<div class="row form-horizontal">
+
+			<div class="col-md-12">
+			<div class="col-md-5">
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="">Login</label>
+					<div class="col-sm-8">
+						<span class="pull-left btn btn-default btn-file ">
+							Browse File Login... <input type="file" >
+						</span>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+
+		<div class="row form-horizontal">
+
+			<div class="col-md-12">
+			<div class="col-md-5">
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="">Logo PDF</label>
+					<div class="col-sm-8">
+						<span class="pull-left btn btn-default btn-file ">
+							Browse File Logo PDF... <input type="file" >
+						</span>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+
+		<div class="row form-horizontal">
+
+			<div class="col-md-12">
+			<div class="col-md-5">
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="">Description</label>
+					<div class="col-sm-8">
+						<textarea class="form-control"></textarea>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+
+
+
+
+		<div class="panel-footer text-left mar-btm">
+			<button type="submit" class="btn btn-info">Create</button>
+
+			<button type="reset" class="btn btn-default">Cancel</button>
+		</div>
+	</div>
+	
+	
+	
+</div>
+<!--===================================================-->
+<!--End page content-->
+

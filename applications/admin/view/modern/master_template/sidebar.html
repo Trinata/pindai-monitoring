@@ -1,0 +1,162 @@
+	{if $page.page eq 'home'}
+		{$activeHome='active-link'}
+	{elseif $page.page eq 'user'}
+		{$activeMaster='active-sub active'}
+		{$inMaster=' in'}
+		{$activeUser='active-link'}
+	{elseif $page.page eq 'company'}
+		{$activeMaster='active-sub active'}
+		{$inMaster=' in'}
+		{$activeCompany='active-link'}
+	{elseif $page.page eq 'industry'}
+		{$activeMaster='active-sub active'}
+		{$inMaster=' in'}
+		{$activeIndustry='active-link'}
+	{elseif $page.page eq 'journalist'}
+		{$activeMaster='active-sub active'}
+		{$inMaster=' in'}
+		{$activeJournalist='active-link'}
+	{elseif $page.page eq 'catMedia'}
+		{$activeMaster='active-sub active'}
+		{$inMaster=' in'}
+		{$activeCatMedia='active-link'}
+	{elseif $page.page eq 'media'}
+		{$activeMaster='active-sub active'}
+		{$inMaster=' in'}
+		{$activeMedia='active-link'}
+	{elseif $page.page eq 'mindShare'}
+		{$activeMaster='active-sub active'}
+		{$inMaster=' in'}
+		{$activeMindShare='active-link'}
+	{elseif $page.page eq 'rubric'}
+		{$activeMaster='active-sub active'}
+		{$inMaster=' in'}
+		{$activeRubric='active-link'}
+	{elseif $page.page eq 'source'}
+		{$activeMaster='active-sub active'}
+		{$inMaster=' in'}
+		{$activeSource='active-link'}
+	{elseif $page.page eq 'topik'}
+		{$activeMaster='active-sub active'}
+		{$inMaster=' in'}
+		{$activeTopik='active-link'}
+	{elseif $page.page eq 'contentArea'}
+		{$activeCM='active-sub active'}
+		{$inCM=' in'}
+		{$activeContentArea='active-link'}
+	{elseif $page.page eq 'analysisArea'}
+		{$activeCM='active-sub active'}
+		{$inCM=' in'}
+		{$activeAnalysisArea='active-link'}
+	{elseif $page.page eq 'approvedList'}
+		{$activeCM='active-sub active'}
+		{$inCM=' in'}
+		{$activeApprovedList='active-link'}
+	{elseif $page.page eq 'summaryArea'}
+		{$activeCM='active-sub active'}
+		{$inCM=' in'}
+		{$activeSummaryArea='active-link'}
+	{/if}
+<!--MAIN NAVIGATION-->
+<!--===================================================-->
+<nav id="mainnav-container">
+	<div id="mainnav">
+
+		<!--Shortcut buttons-->
+		<!--================================-->
+		<div id="mainnav-shortcut">
+			
+		</div>
+		<!--================================-->
+		<!--End shortcut buttons-->
+		<!--{pr($page.function)}
+		{pr($page.page)}-->
+
+		<!--Menu-->
+		<!--================================-->
+		<div id="mainnav-menu-wrap">
+			<div class="nano">
+				<div class="nano-content">
+					<ul id="mainnav-menu" class="list-group">
+						
+						<li class="list-header">Dashboard</li>
+
+						<li class="{$activeHome}">
+							<a href="{$basedomain}home">
+								<i class="fa fa-inbox"></i>
+								<span class="menu-title">
+									Dashboard
+								</span>
+							</a>
+						</li>
+						{*}
+						<li class="{if $page.page eq 'home' && $page.function eq 'statistik'}active-link{/if}">
+							<a href="{$basedomain}home/statistik">
+								<i class="fa fa-bar-chart-o"></i>
+								<span class="menu-title">Statistik Pengaduan </span>
+							</a>
+			
+						</li>{/*}
+						<!--Category name-->
+						<li class="list-header">Master</li>
+						<li class="{$activeMaster}">
+							<a href="#">
+									<i class="fa fa-group"></i>
+									<span class="menu-title">Master</span>
+									<i class="arrow"></i>
+							</a>
+							<ul class="collapse {$inMaster}">
+								<li class="{$activeUser}"><a href="{$basedomain}user">User</a></li>
+								<li class="{$activeCompany}"><a href="{$basedomain}company">Company</a></li>
+								<li class="{$activeIndustry}"><a href="{$basedomain}industry">Industry</a></li>
+								<li class="{$activeJournalist}"><a href="{$basedomain}journalist">Journalist</a></li>
+								<li class="{$activeCatMedia}"><a href="{$basedomain}catMedia">Cat Media</a></li>
+								<li class="{$activeMedia}"><a href="{$basedomain}media">Media</a></li>
+								<li class="{$activeMindShare}"><a href="{$basedomain}mindShare">Mindshare</a></li>
+								<li class="{$activeRubric}"><a href="{$basedomain}rubric">Rubric</a></li>
+								<li class="{$activeSource}"><a href="{$basedomain}source">Source</a></li>
+								<li class="{$activeTopik}"><a href="{$basedomain}topik">Topik</a></li>
+							</ul>	
+						</li>
+						
+						<!--Category name-->
+						<li class="list-header">Content</li>
+						
+						<!--Menu list item-->
+						<li class="{$activeCM}">
+							<a href="#">
+								<i class="fa fa-group"></i>
+								<span class="menu-title">Content Management</span>
+								<i class="arrow"></i>
+							</a>
+			
+							<!--Submenu-->
+							<ul class="collapse {$inCM}">
+								<li class="{$activeContentArea}"><a href="{$basedomain}contentArea">Content Area</a></li>
+								<li class="{$activeAnalysisArea}"><a href="{$basedomain}analysisArea">Analysis Area</a></li>
+								<li class="{$activeApprovedList}"><a href="{$basedomain}approvedList">Approved List</a></li>
+								<li class="{$activeSummaryArea}"><a href="{$basedomain}summaryArea">Summary Area</a></li>
+							</ul>
+						</li>
+
+						<li class="list-header">Report</li>
+			
+						<li class="{if $page.page eq 'home' && $page.function eq 'statistik'}active-link{/if}">
+							<a href="{$basedomain}home/statistik">
+								<i class="fa fa-bar-chart-o"></i>
+								<span class="menu-title">Client Report</span>
+							</a>
+			
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+		<!--================================-->
+		<!--End menu-->
+
+	</div>
+</nav>
+<!--===================================================-->
+<!--END MAIN NAVIGATION-->

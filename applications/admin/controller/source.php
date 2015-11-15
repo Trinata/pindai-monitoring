@@ -1,7 +1,7 @@
 <?php
 // defined ('TATARUANG') or exit ( 'Forbidden Access' );
 
-class user extends Controller {
+class source extends Controller {
 	
 	var $models = FALSE;
 	
@@ -16,7 +16,7 @@ class user extends Controller {
 		$this->admin = $sessionAdmin->get_session();
 		// $this->validatePage();
 		$this->view->assign('app_domain',$app_domain);
-		$this->folder=CODEKIR_TEMPLATE.'/master/user/';
+		$this->folder=CODEKIR_TEMPLATE.'/master/source/';
 	}
 	public function loadmodule()
 	{
@@ -25,8 +25,9 @@ class user extends Controller {
 	}
 	
 	public function index(){
+		
 
-		return $this->loadView($this->folder."user");
+		return $this->loadView($this->folder."source");
 
 	}
 
