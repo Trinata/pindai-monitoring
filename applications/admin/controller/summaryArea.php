@@ -37,6 +37,13 @@ class summaryArea extends Controller {
 
 	}
 
+	public function search(){
+		
+
+		return $this->loadView($this->folder."search_summaryArea");
+
+	}
+
 
 	
 }

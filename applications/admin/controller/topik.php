@@ -30,6 +30,12 @@ class topik extends Controller {
 		return $this->loadView($this->folder."topik");
 
 	}
+	public function create(){
+		
+
+		return $this->loadView($this->folder."create_topik");
+
+	}
 
 
 	

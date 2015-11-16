@@ -30,6 +30,12 @@ class source extends Controller {
 		return $this->loadView($this->folder."source");
 
 	}
+	public function create(){
+		
+
+		return $this->loadView($this->folder."create_source");
+
+	}
 
 
 	
