@@ -3,7 +3,7 @@
 define ('debug', true);
 
 /* define app path */
-define ('CODEKIR_ROOTPATH', '/home/erjoned/Data/xampp/htdocs/pindai-monitoring/');
+define ('CODEKIR_ROOTPATH', '/var/erjoned/Data/xampp/htdocs/pindai-monitoring/');
 
 /* define engine path */
 define ('CODEKIR_PACKAGE', '/home/erjoned/Data/xampp/htdocs/new-codekir/loader/');
