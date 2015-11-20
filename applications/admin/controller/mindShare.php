@@ -30,6 +30,12 @@ class mindShare extends Controller {
 		return $this->loadView($this->folder."mindShare");
 
 	}
+	public function create(){
+		
+
+		return $this->loadView($this->folder."create_mindShare");
+
+	}
 
 
 	

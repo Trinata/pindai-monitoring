@@ -1,7 +1,7 @@
 <?php
 // defined ('TATARUANG') or exit ( 'Forbidden Access' );
 
-class topik extends Controller {
+class report extends Controller {
 	
 	var $models = FALSE;
 	
@@ -16,7 +16,7 @@ class topik extends Controller {
 		$this->admin = $sessionAdmin->get_session();
 		// $this->validatePage();
 		$this->view->assign('app_domain',$app_domain);
-		$this->folder=CODEKIR_TEMPLATE.'/master/topik/';
+		$this->folder=CODEKIR_TEMPLATE.'/report/';
 	}
 	public function loadmodule()
 	{
@@ -27,13 +27,20 @@ class topik extends Controller {
 	public function index(){
 		
 
-		return $this->loadView($this->folder."topik");
+		return $this->loadView($this->folder."report");
 
 	}
 	public function create(){
 		
 
-		return $this->loadView($this->folder."create_topik");
+		return $this->loadView($this->folder."create_report");
+
+	}
+
+	public function search(){
+		
+
+		return $this->loadView($this->folder."search_report");
 
 	}
 

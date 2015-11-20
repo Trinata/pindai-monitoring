@@ -2,7 +2,7 @@
 <!--Page Title-->
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <div id="page-title">
-	<h1 class="page-header text-overflow">Create Cat Media</h1>
+	<h1 class="page-header text-overflow">Create MindShare</h1>
 	
 	<!--Searchbox-->
 	<!-- <div class="searchbox">
@@ -22,7 +22,7 @@
 <ol class="breadcrumb">
 	<li><a href="{$basedomain}">Home</a></li>
 	<li><a href="{$basedomain}">Master</a></li>
-	<li class="active">Cat Media</li>
+	<li class="active">MindShare</li>
 </ol>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <!--End breadcrumb-->
@@ -39,13 +39,13 @@
 								<!--Nav Tabs-->
 								<ul class="nav nav-tabs">
 									<li>
-										<a href="{$basedomain}catMedia">Daftar Data</a>
+										<a href="{$basedomain}mindShare">Daftar Data</a>
 									</li>
 									<li  class="active">
-										<a href="{$basedomain}catMedia/create">Buat Data</a>
+										<a href="{$basedomain}mindShare/create">Buat Data</a>
 									</li>
 									<li>
-										<a href="{$basedomain}catMedia/search">Cari Data</a>
+										<a href="{$basedomain}mindShare/search">Cari Data</a>
 									</li>
 								</ul>
 
@@ -60,20 +60,31 @@
 										<div class="row form-horizontal">
 											<div class="col-md-8">
 												<div class="form-group">
-													<label class="col-sm-3 control-label" for="">Nama</label>
-													<div class="col-sm-4">
+													<label class="col-sm-3 control-label" for="">Nama *</label>
+													<div class="col-sm-8">
 														
 															<input type="text" class="form-control" placeholder="Nama">
 													</div>
 												</div>
 											</div>
 										</div>
+
 										<div class="row form-horizontal">
 											<div class="col-md-8">
 												<div class="form-group">
-													<label class="col-sm-3 control-label" for="">Color</label>
+													<label class="col-sm-3 control-label" for="">Description *</label>
+													<div class="col-sm-8">
+														
+															<input type="text" class="form-control" placeholder="Description">
+													</div>
+												</div>
+											</div>
+											<div class="col-md-8">
+												<div class="form-group">
+													<label class="col-sm-3 control-label" for="">&nbsp;</label>
 													<div class="col-sm-9">
-													<input type="color" class="form-control" >
+														
+												Description digunakan untuk penamaan label di dalam grafik
 													</div>
 												</div>
 											</div>
@@ -81,14 +92,40 @@
 										<div class="row form-horizontal">
 											<div class="col-md-8">
 												<div class="form-group">
-													<label class="col-sm-3 control-label" for="">Description</label>
-													<div class="col-sm-9">
-													<textarea class="form-control" placeholder="Descritpion">
-													</textarea>
+													<label class="col-sm-3 control-label" for="">Color *</label>
+													<div class="col-sm-4">
+														<input type="color" class="form-control" placeholder="Description">
 													</div>
 												</div>
 											</div>
 										</div>
+
+										<div class="row form-horizontal">
+											<div class="col-md-8">
+												<div class="form-group">
+													<label class="col-sm-3 control-label" for="">Company *</label>
+													<div class="col-sm-4">
+														<select class="selectpicker">
+															<option>--Pilih Company--</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="row form-horizontal">
+											<div class="col-md-8">
+												<div class="form-group">
+													<label class="col-sm-3 control-label" for="">Urutan *</label>
+													<div class="col-sm-4">
+														<select class="selectpicker">
+															<option>--Pilih Urutan--</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</div>
+
 									<div class="panel-footer text-left mar-btm">
 										<button type="submit" class="btn btn-info">Create</button>
 

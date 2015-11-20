@@ -30,6 +30,12 @@ class media extends Controller {
 		return $this->loadView($this->folder."media");
 
 	}
+	public function create(){
+		
+
+		return $this->loadView($this->folder."create_media");
+
+	}
 
 
 	

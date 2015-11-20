@@ -29,6 +29,11 @@ class user extends Controller {
 		return $this->loadView($this->folder."user");
 
 	}
+	public function create(){
+
+		return $this->loadView($this->folder."create_user");
+
+	}
 
 
 	

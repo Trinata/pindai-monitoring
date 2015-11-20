@@ -56,6 +56,10 @@
 		{$activeCM='active-sub active'}
 		{$inCM=' in'}
 		{$activeSummaryArea='active-link'}
+	{elseif $page.page eq 'report'}
+		{$activeReport='active-sub active'}
+		{$inReport=' in'}
+		{$activeReport='active-link'}
 	{/if}
 <!--MAIN NAVIGATION-->
 <!--===================================================-->
@@ -141,8 +145,8 @@
 
 						<li class="list-header">Report</li>
 			
-						<li class="{if $page.page eq 'home' && $page.function eq 'statistik'}active-link{/if}">
-							<a href="{$basedomain}home/statistik">
+						<li class="{$activeReport}">
+							<a href="{$basedomain}report">
 								<i class="fa fa-bar-chart-o"></i>
 								<span class="menu-title">Client Report</span>
 							</a>
