@@ -3,7 +3,7 @@ applications/default/config/config.php
 applications/default/config/access.php
 applications/admin/config/config.php
 applications/admin/cache/*
-applications/inc/config.inc.php
+applications/inc/*
 public_assets/*
 
 # Other files and folders
