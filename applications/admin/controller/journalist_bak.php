@@ -45,7 +45,6 @@ class journalist extends Controller {
 		return $this->loadView($this->folder."journalist");
 
 	}
-	
 	public function create(){
 		
 		return $this->loadView($this->folder."create_journalist");

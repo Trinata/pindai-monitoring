@@ -73,15 +73,21 @@
 											<td>&nbsp;
 											</td>
 										</tr>
+
+										{if !empty($data)}
+										{foreach $data as $key=> $vol}
+
 										<tr>
-											<td>Tiger Nixon</td>
-											<td>System Architect</td>
+											<td>{$key+1}</td>
+											<td>{$vol.name}</td>
 											<td>
-												<a href="#" class="btn btn-success "><i class="fa fa-eye"></i></a>
-												<a href="#" class="btn btn-info "><i class="fa fa-pencil"></i></a>
-												<a href="#" class="btn btn-danger "><i class="fa fa-trash"></i></a>
+												<a href="{$basedomain}rubric/view/?id={$vol.id}" class="btn btn-success "><i class="fa fa-eye"></i></a>
+												<a href="{$basedomain}rubric/edit/?id={$vol.id}" class="btn btn-info "><i class="fa fa-pencil"></i></a>
+												<a href="{$basedomain}rubric/delete/?id={$vol.id}" class="btn btn-danger" onclick="return submit_confirm('Hapus data?')"><i class="fa fa-trash"></i></a>
 											</td>
 										</tr>
+
+										{*}
 										<tr>
 											<td>Shad Decker</td>
 											<td>System Architect</td>
@@ -109,6 +115,11 @@
 												<a href="#" class="btn btn-danger "><i class="fa fa-trash"></i></a>
 											</td>
 										</tr>
+										{/*}
+
+										{/foreach}
+										{/if}
+
 									</tbody>
 								</table>
 								</div>
