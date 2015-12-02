@@ -19,18 +19,18 @@ $CONFIG['admin']['default_view'] = 'home';
 $CONFIG['admin']['login'] = 'login';
 
 
-$CONFIG['admin']['app_url'] = 'http://localhost/codekir-cms/';
-$CONFIG['admin']['base_url'] = 'http://localhost/codekir-cms/applications/admin/';
+$CONFIG['admin']['app_url'] = 'http://localhost/pindai-monitoring/';
+$CONFIG['admin']['base_url'] = 'http://localhost/pindai-monitoring/applications/admin/';
 $CONFIG['admin']['root_path'] = $_SERVER['DOCUMENT_ROOT'].'/codekir-cms/applications/admin';
 
-$CONFIG['admin']['upload_path'] = $_SERVER['DOCUMENT_ROOT'].'/codekir-cms/applications/public_assets/';
+$CONFIG['admin']['upload_path'] = $_SERVER['DOCUMENT_ROOT'].'/codekir-cms/public_assets/';
 
 $CONFIG['admin']['max_filesize'] = 2097152;
 
 $CONFIG['admin']['css'] = CODEKIR_ADMINPATH.'css/';
 $CONFIG['admin']['images'] = CODEKIR_ADMINPATH.'images/';
 $CONFIG['admin']['js'] = CODEKIR_ADMINPATH.'js/';
-
+$CONFIG['admin']['image'] = array('image/jpeg', 'image/pjpeg');
 $basedomain = $CONFIG['admin']['base_url'];
 $app_domain = $CONFIG['admin']['app_url'];
 
@@ -39,7 +39,7 @@ $app_domain = $CONFIG['admin']['app_url'];
 $dbConfig[0]['host'] = 'localhost';
 $dbConfig[0]['user'] = 'root';
 $dbConfig[0]['pass'] = 'root123root';
-$dbConfig[0]['name'] = 'codekir_cms';
+$dbConfig[0]['name'] = 'pindai_app';
 $dbConfig[0]['server'] = 'mysql';
 
 

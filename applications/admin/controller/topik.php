@@ -10,6 +10,7 @@ class topik extends Controller {
 		parent::__construct();
 
 		global $app_domain;
+		global $basedomain;
 		$this->loadmodule();
 		$this->view = $this->setSmarty();
 		$sessionAdmin = new Session;
@@ -20,12 +21,19 @@ class topik extends Controller {
 	}
 	public function loadmodule()
 	{
-		
-		// $this->contentHelper = $this->loadModel('contentHelper');
+		global $basedomain, $app_domain;
+
+		// 
+		$this->contentHelper = $this->loadModel('contentHelper');
 	}
 	
 	public function index(){
 		
+		$data=$this->contentHelper->gettopik();
+
+		if ($data){	
+			$this->view->assign('data',$data);
+		}
 
 		return $this->loadView($this->folder."topik");
 
@@ -37,7 +45,70 @@ class topik extends Controller {
 
 	}
 
+	public function input(){
+		global $CONFIG;
 
+		$name = $_POST['name'];
+
+		$data=$this->contentHelper->inputtopik($name);
+
+		if($data == 1){
+				echo "<script>alert('Data berhasil di simpan');window.location.href='".$CONFIG['admin']['base_url']."topik'</script>";
+			}
+	}
+
+	public function view(){
+
+		global $CONFIG;
+			$id = $_GET ['id'];
+			$data=$this->contentHelper->selecttopik($id);
+				if ($data){	
+					$this->view->assign('data',$data);
+				}	
+			return $this->loadView($this->folder."view_topik");
+	}
+
+	public function edit(){
+
+		global $CONFIG;
+			$id = $_GET ['id'];
+
+			if ($_POST == null){
+				$data = $this->contentHelper-> selecttopik($id);
+				//pr ($data);
+				
+				if ($data){	
+					$this->view->assign('data',$data);
+				}	
+				return $this->loadView($this->folder."edit_topik");
+				
+			}
+
+			else {
+				$name = $_POST['name'];
+				//pr($_POST);
+
+				$data = $this->contentHelper->updatetopik($id,$name);
+				//pr($data);
+					if($data == 1){
+						echo "<script>alert('Data berhasil di simpan');window.location.href='".$CONFIG['admin']['base_url']."topik'</script>";
+				}
+			}
+
+	}
+
+	public function delete()
+	{
+		global $CONFIG;
+			$id = $_GET ['id'];
+
+			$data=$this->contentHelper->deletetopik($id);
+
+			if($data == 1){
+				echo "<script>alert('Data berhasil di hapus');window.location.href='".$CONFIG['admin']['base_url']."topik'</script>";
+			}
+			else {pr('gagal');}
+	}
 	
 }
 
