@@ -2,7 +2,7 @@
 <!--Page Title-->
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <div id="page-title">
-	<h1 class="page-header text-overflow">Edit MindShare</h1>
+	<h1 class="page-header text-overflow">Edit Media</h1>
 	
 	<!--Searchbox-->
 	<!-- <div class="searchbox">
@@ -22,7 +22,7 @@
 <ol class="breadcrumb">
 	<li><a href="{$basedomain}">Home</a></li>
 	<li><a href="{$basedomain}">Master</a></li>
-	<li class="active">MindShare</li>
+	<li class="active">Media</li>
 </ol>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <!--End breadcrumb-->
@@ -38,14 +38,14 @@
 	
 								<!--Nav Tabs-->
 								<ul class="nav nav-tabs">
-									<li  class="active">
-										<a href="{$basedomain}mindShare">Daftar Data</a>
+									<li class="active">
+										<a href="{$basedomain}media">Daftar Data</a>
 									</li>
 									<li>
-										<a href="{$basedomain}mindShare/create">Buat Data</a>
+										<a href="{$basedomain}media/create">Buat Data</a>
 									</li>
 									<li>
-										<a href="{$basedomain}mindShare/search">Cari Data</a>
+										<a href="{$basedomain}media/search">Cari Data</a>
 									</li>
 								</ul>
 
@@ -57,16 +57,39 @@
 									</div>
 
 									<form class="form-horizontal" action="" method="post">
-
 										<div class="panel-body">
 
 											<div class="row form-horizontal">
 												<div class="col-md-8">
 													<div class="form-group">
 														<label class="col-sm-3 control-label" for="">Nama *</label>
-														<div class="col-sm-8">
+														<div class="col-sm-4">
 															
-																<input name="name" type="text" class="form-control" placeholder="Nama" value="{$datamind.name}" required>
+																<input name="name" type="text" class="form-control" placeholder="Nama" value="{$datamedia.name}" required>
+														</div>
+													</div>
+												</div>
+											</div>
+																				
+											<div class="row form-horizontal">
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class="col-sm-3 control-label" for="">Category *</label>
+														<div class="col-sm-4">
+															<select name="media_category" class="selectpicker" required value="{$datamedia.media_category}">
+																<option>--Pilih Cat Media--</option>
+															</select>
+														</div>
+													</div>
+												</div>
+											</div>
+											
+											<div class="row form-horizontal">
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class="col-sm-3 control-label" for="">Adv Price</label>
+														<div class="col-sm-4">
+																<input name="dataadv" type="number" class="form-control" placeholder="Adv Price" value="{$datamedia.advprice.advprice}">
 														</div>
 													</div>
 												</div>
@@ -75,28 +98,22 @@
 											<div class="row form-horizontal">
 												<div class="col-md-8">
 													<div class="form-group">
-														<label class="col-sm-3 control-label" for="">Description *</label>
-														<div class="col-sm-8">
-																<input name="description" type="text" class="form-control" placeholder="Description" value="{$datamind.description}" required>
-														</div>
-													</div>
-												</div>
-												<div class="col-md-8">
-													<div class="form-group">
-														<label class="col-sm-3 control-label" for="">&nbsp;</label>
-														<div class="col-sm-9" >
+														<label name="pic" class="col-sm-3 control-label" for="">Penanggung Jawab</label>
+														<div class="col-sm-4">
 															
-													Description digunakan untuk penamaan label di dalam grafik
+																<input name="pic" type="text" class="form-control" placeholder="Penanggung Jawab" value="{$datamedia.pic}">
 														</div>
 													</div>
 												</div>
 											</div>
+
 											<div class="row form-horizontal">
 												<div class="col-md-8">
 													<div class="form-group">
-														<label class="col-sm-3 control-label" for="">Color *</label>
+														<label class="col-sm-3 control-label" for="">Color</label>
 														<div class="col-sm-4">
-															<input type="color" class="form-control" placeholder="Description" required>
+															
+																<input type="color" class="form-control" placeholder="color">
 														</div>
 													</div>
 												</div>
@@ -105,47 +122,13 @@
 												<div class="col-md-8">
 													<div class="form-group">
 														<label class="col-sm-3 control-label" for="">Color Code *</label>
-														<div class="col-sm-8">
+														<div class="col-sm-4">
 															
-																<input name="data" type="text" class="form-control" placeholder="Code" value="{$datamind.color.color}">
+																<input name="datacol" type="text" class="form-control" placeholder="Code" required value="{$datamedia.color.color}">
 														</div>
 													</div>
 												</div>
 											</div>
-												
-											<div class="row form-horizontal">
-												<div class="col-md-8">
-													<div class="form-group">
-														<label class="col-sm-3 control-label" for="">Company *</label>
-														<div class="col-sm-4">
-															<select name="company_id" class="selectpicker" value="{$datamind.company_id}">
-																<option>--Pilih Company--</option>
-																<option value="1" {if ($datamind.company_id==1)} selected{/if}>PT Bla Bla Bla</option>
-																<option value="2" {if ($datamind.company_id==2)} selected{/if}>PT Chiby</option>
-																<option value="3" {if ($datamind.company_id==3)} selected{/if}>PT Ea Ea Ea</option>
-															</select>
-														</div>
-													</div>
-												</div>
-											</div>
-
-											<div class="row form-horizontal">
-												<div class="col-md-8">
-													<div class="form-group">
-														<label class="col-sm-3 control-label" for="">Urutan *</label>
-														<div class="col-sm-4">
-															<select name="sort" class="selectpicker" value="{$datamind.sort}">
-																<option>--Pilih Urutan--</option>
-																<option value="1" {if ($datamind.sort==1)} selected{/if}>Satu</option>
-																<option value="2" {if ($datamind.sort==2)} selected{/if}>Tiga</option>
-																<option value="3" {if ($datamind.sort==3)} selected{/if}>Tiga</option>
-																<option value="4" {if ($datamind.sort==4)} selected{/if}>Empat</option>
-															</select>
-														</div>
-													</div>
-												</div>
-											</div>
-
 											<div class="panel-footer text-left mar-btm">
 												<input type="hidden" name="id" value="{$data.id}"/>
 												<button type="submit" class="btn btn-info">Save</button>

@@ -101,11 +101,11 @@
 											<td>{$value.pic}</td>
 											<td>{$value.color.color}</td>
 											<td>{$value.media_category}</td>
-											<td>{money_format("%.2n",$value.advprice.advprice)}</td>
+											<td>{money_format("Rp %.2n",$value.advprice.advprice)}</td>
 											<td>
-												<a href="#" class="btn btn-success "><i class="fa fa-eye"></i></a>
-												<a href="#" class="btn btn-info "><i class="fa fa-pencil"></i></a>
-												<a href="#" class="btn btn-danger "><i class="fa fa-trash"></i></a>
+												<a href="{$basedomain}media/view/?id={$value.id}" class="btn btn-success "><i class="fa fa-eye"></i></a>
+												<a href="{$basedomain}media/edit/?id={$value.id}" class="btn btn-info "><i class="fa fa-pencil"></i></a>
+												<a href="{$basedomain}media/delete/?id={$value.id}" class="btn btn-danger " onclick="return submit_confirm('Hapus data?')"><i class="fa fa-trash"></i></a>
 											</td>
 										</tr>
 										{*}

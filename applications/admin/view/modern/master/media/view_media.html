@@ -1,0 +1,133 @@
+
+<!--Page Title-->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<div id="page-title">
+	<h1 class="page-header text-overflow">View Media</h1>
+	
+	<!--Searchbox-->
+	<!-- <div class="searchbox">
+		<div class="input-group custom-search-form">
+			<input type="text" class="form-control" placeholder="Search..">
+			<span class="input-group-btn">
+				<button class="text-muted" type="button"><i class="fa fa-search"></i></button>
+			</span>
+		</div>
+	</div> -->
+</div>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!--End page title-->
+
+<!--Breadcrumb-->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+	<li><a href="{$basedomain}">Home</a></li>
+	<li><a href="{$basedomain}">Master</a></li>
+	<li class="active">Media</li>
+</ol>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!--End breadcrumb-->
+
+<!--Page content-->
+<!--===================================================-->
+<div id="page-content">
+	<!-- <div class="row"> -->
+		<!-- <div class="col-lg-12"> -->
+			<!-- <div class="panel"> -->
+						<!-- <div class="panel-body"> -->
+							<div class="tab-base">
+	
+								<!--Nav Tabs-->
+								<ul class="nav nav-tabs">
+									<li class="active">
+										<a href="{$basedomain}media">Daftar Data</a>
+									</li>
+									<li>
+										<a href="{$basedomain}media/create">Buat Data</a>
+									</li>
+									<li>
+										<a href="{$basedomain}media/search">Cari Data</a>
+									</li>
+								</ul>
+
+								<div class="tab-content">
+								
+								<div class="panel">
+									<div class="panel-heading">
+										<h3 class="panel-title"><i>Field Media</i></h3>
+									</div>
+
+									<form class="form-horizontal" action="{$basedomain}media" method="post">
+										<div class="panel-body">
+												<div class="row form-horizontal">
+													<div class="col-md-8">
+														<div class="form-group">
+															<label class="col-sm-3 control-label" for="">ID :</label>
+															<div class="col-sm-8">
+
+																		<label class="col-sm-3 control-label" for="">{$datamedia.id}</label>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-3 control-label" for="">Media :</label>
+															<div class="col-sm-8">
+
+																	<label class="col-sm-3 control-label" for="">{$datamedia.name}</label>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-3 control-label" for="">Penanggung Jawab :</label>
+															<div class="col-sm-8">
+
+																	<label class="col-sm-3 control-label" for="">{$datamedia.pic}</label>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-3 control-label" for="">Color :</label>
+															<div class="col-sm-8">
+
+																	<label class="col-sm-3 control-label" for="">{$datamedia.color.color}</label>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-3 control-label" for="">Category :</label>
+															<div class="col-sm-8">
+
+																	<label class="col-sm-3 control-label" for="">{$datamedia.media_category}</label>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-3 control-label" for="">Adv Price :</label>
+															<div class="col-sm-8">
+
+																	<label class="col-sm-3 control-label" for="">{money_format("Rp %.2n",$datamedia.advprice.advprice)}</label>
+															</div>
+														</div>
+													</div>
+												</div>
+												
+												<div class="panel-footer text-left mar-btm" >
+													<button type="submit" class="btn btn-info">Back</button>
+												</div>
+												{*}
+													<button type="reset" class="btn btn-default">Cancel</button>
+												{/*}
+
+										</div>
+									</form>
+								</div>
+								</div>
+							</div>
+						<!-- </div> -->
+					<!-- </div> -->
+					
+
+		<!-- </div> -->
+	<!-- </div> -->
+	
+	
+	
+</div>
+<!--===================================================-->
+<!--End page content-->
+
+

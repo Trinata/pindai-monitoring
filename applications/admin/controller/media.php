@@ -64,11 +64,6 @@ class media extends Controller {
 		$media_category =$_POST['media_category'];
 		$pic = $_POST['pic'];
 
-		// $databuff['color'] = $_POST['datacol'];
-		// $databuff['advprice'] = $_POST['dataadv'];
-
-		// $data = serialize($databuff);
-
 		$data = serialize(array('color'=>$_POST['datacol'], 'advprice'=>$_POST['dataadv']));		
 
 		// pr($_POST);exit;
@@ -87,16 +82,15 @@ class media extends Controller {
 			$datamedia=$this->contentHelper->selectmedia($id);
 			// pr($datamedia); 
 
-			if ($datamedia){	
-			foreach ($datamedia as $key => $value) {
-				if ($value['data']) {
-					$datamedia[$key]['color'] = unserialize($value['data']);
-					// $datamedia[$key]['advprice'] = unserialize($value['data']);
+			if($datamedia){
+				if 	($datamedia['data']){
+					$datamedia['color'] = unserialize($datamedia['data']);
+					$datamedia['advprice'] = unserialize($datamedia['data']);
 				}
-			}
-
+				
+				pr($datamedia);
 				$this->view->assign('datamedia',$datamedia);
-			}
+			}	
 
 			return $this->loadView($this->folder."view_media");
 	}
@@ -110,14 +104,13 @@ class media extends Controller {
 				$datamedia=$this->contentHelper->selectmedia($id);
 				// pr ($datamedia); 
 				
-				if ($datamedia){	
-					foreach ($datamedia as $key => $value) {
-						if ($value['data']) {
-							$datamedia[$key]['color'] = unserialize($value['data']);
-							// $datamedia[$key]['advprice'] = unserialize($value['data']);
-						}
+				if($datamedia){
+						if 	($datamedia['data']){
+							$datamedia['color'] = unserialize($datamedia['data']);
+							$datamedia['advprice'] = unserialize($datamedia['data']);
 					}
-
+	
+					// pr($datamedia);
 					$this->view->assign('datamedia',$datamedia);
 				}		
 				
@@ -128,9 +121,9 @@ class media extends Controller {
 				$name = $_POST['name'];
 				$media_category =$_POST['media_category'];
 				$pic = $_POST['pic'];
-				$data = serialize(array('color'=>$_POST['data']));
-				// $data = serialize(array('advprice'=>$_POST['data']));
 
+				$data = serialize(array('color'=>$_POST['datacol'], 'advprice'=>$_POST['dataadv']));
+				
 				$update = $this->contentHelper->updatemedia($id,$name,$media_category,$pic,$data);
 				//pr($data);
 					if($update == 1){
