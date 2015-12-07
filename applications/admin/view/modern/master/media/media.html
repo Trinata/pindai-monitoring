@@ -91,19 +91,24 @@
 												&nbsp;
 											</td>
 										</tr>
+
+										{if !empty($datamedia)}
+										{foreach $datamedia as $key=> $value}
+
 										<tr>
-											<td>1</td>
-											<td>System Architect</td>
-											<td>System Architect</td>
-											<td>System Architect</td>
-											<td>System Architect</td>
-											<td>System Architect</td>
+											<td>{$key+1}</td>
+											<td>{$value.name}</td>
+											<td>{$value.pic}</td>
+											<td>{$value.color.color}</td>
+											<td>{$value.media_category}</td>
+											<td>{money_format("%.2n",$value.advprice.advprice)}</td>
 											<td>
 												<a href="#" class="btn btn-success "><i class="fa fa-eye"></i></a>
 												<a href="#" class="btn btn-info "><i class="fa fa-pencil"></i></a>
 												<a href="#" class="btn btn-danger "><i class="fa fa-trash"></i></a>
 											</td>
 										</tr>
+										{*}
 										<tr>
 											<td>2</td>
 											<td>System Architect</td>
@@ -143,6 +148,9 @@
 												<a href="#" class="btn btn-danger "><i class="fa fa-trash"></i></a>
 											</td>
 										</tr>
+										{/*}
+										{/foreach}
+										{/if}
 									</tbody>
 								</table>
 								</div>

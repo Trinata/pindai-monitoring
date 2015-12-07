@@ -91,19 +91,44 @@
 												&nbsp;
 											</td>
 										</tr>
+
+										{if !empty($datamind)}
+										{foreach $datamind as $key=> $value}
+
 										<tr>
-											<td>1</td>
-											<td>System Architect</td>
-											<td>System Architect</td>
-											<td>System Architect</td>
-											<td>System Architect</td>
-											<td>System Architect</td>
+											<td>{$key+1}</td>
+											<td>{$value.name}</td>
+											<td>{$value.description}</td>
+											<td>{$value.color.color}</td>
 											<td>
-												<a href="#" class="btn btn-success "><i class="fa fa-eye"></i></a>
-												<a href="#" class="btn btn-info "><i class="fa fa-pencil"></i></a>
-												<a href="#" class="btn btn-danger "><i class="fa fa-trash"></i></a>
+												{if $value.company_id == '1'}
+													PT Bla Bla Bla
+												{elseif $value.company_id == '2'}
+													PT Chiby
+												{else $value.company_id == '3'}
+													PT Ea Ea Ea
+												{/if}
+											</td>
+											<td>
+												{if $value.sort == '1'}
+													Satu
+												{elseif $value.sort == '2'}
+													Dua
+												{elseif $value.sort == '3'}
+													Tiga
+												{else $value.sort == '4'}
+													Empat
+												{/if}
+
+											</td>
+											<td>
+												<a href="{$basedomain}mindShare/view/?id={$value.id}" class="btn btn-success "><i class="fa fa-eye"></i></a>
+												<a href="{$basedomain}mindShare/edit/?id={$value.id}" class="btn btn-info "><i class="fa fa-pencil"></i></a>
+												<a href="{$basedomain}mindShare/delete/?id={$value.id}" class="btn btn-danger " onclick="return submit_confirm('Hapus data?')"><i class="fa fa-trash"></i></a>
 											</td>
 										</tr>
+
+										{*}
 										<tr>
 											<td>2</td>
 											<td>System Architect</td>
@@ -143,6 +168,10 @@
 												<a href="#" class="btn btn-danger "><i class="fa fa-trash"></i></a>
 											</td>
 										</tr>
+										{/*}
+
+										{/foreach}
+										{/if}
 									</tbody>
 								</table>
 								</div>

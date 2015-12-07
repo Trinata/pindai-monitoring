@@ -2,7 +2,7 @@
 <!--Page Title-->
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <div id="page-title">
-	<h1 class="page-header text-overflow">Create Media</h1>
+	<h1 class="page-header text-overflow">Edit Cat Media</h1>
 	
 	<!--Searchbox-->
 	<!-- <div class="searchbox">
@@ -22,7 +22,7 @@
 <ol class="breadcrumb">
 	<li><a href="{$basedomain}">Home</a></li>
 	<li><a href="{$basedomain}">Master</a></li>
-	<li class="active">Media</li>
+	<li class="active">Cat Media</li>
 </ol>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <!--End breadcrumb-->
@@ -38,14 +38,14 @@
 	
 								<!--Nav Tabs-->
 								<ul class="nav nav-tabs">
-									<li>
-										<a href="{$basedomain}media">Daftar Data</a>
-									</li>
-									<li  class="active">
-										<a href="{$basedomain}media/create">Buat Data</a>
+									<li class="active">
+										<a href="{$basedomain}catMedia">Daftar Data</a>
 									</li>
 									<li>
-										<a href="{$basedomain}media/search">Cari Data</a>
+										<a href="{$basedomain}catMedia/create">Buat Data</a>
+									</li>
+									<li>
+										<a href="{$basedomain}catMedia/search">Cari Data</a>
 									</li>
 								</ul>
 
@@ -55,8 +55,9 @@
 									<div class="panel-heading">
 										<h3 class="panel-title"><i>Field dengan tanda * harus diisi</i></h3>
 									</div>
+									
+									<form class="form-horizontal" action="" method="post">
 
-									<form class="form-horizontal" action="{$basedomain}media/input" method="post">
 										<div class="panel-body">
 
 											<div class="row form-horizontal">
@@ -65,56 +66,17 @@
 														<label class="col-sm-3 control-label" for="">Nama *</label>
 														<div class="col-sm-4">
 															
-																<input name="name" type="text" class="form-control" placeholder="Nama" required>
+																<input name="name" type="text" class="form-control" placeholder="Nama" value="{$datacatmedia.name}"required>
 														</div>
 													</div>
 												</div>
 											</div>
-																				
 											<div class="row form-horizontal">
 												<div class="col-md-8">
 													<div class="form-group">
-														<label class="col-sm-3 control-label" for="">Category *</label>
-														<div class="col-sm-4">
-															<select name="media_category" class="selectpicker" required>
-																<option>--Pilih Cat Media--</option>
-															</select>
-														</div>
-													</div>
-												</div>
-											</div>
-											
-											<div class="row form-horizontal">
-												<div class="col-md-8">
-													<div class="form-group">
-														<label class="col-sm-3 control-label" for="">Adv Price</label>
-														<div class="col-sm-4">
-															
-																<input name="dataadv" type="number" class="form-control" placeholder="Adv Price">
-														</div>
-													</div>
-												</div>
-											</div>
-
-											<div class="row form-horizontal">
-												<div class="col-md-8">
-													<div class="form-group">
-														<label name="pic" class="col-sm-3 control-label" for="">Penanggung Jawab</label>
-														<div class="col-sm-4">
-															
-																<input name="pic" type="text" class="form-control" placeholder="Penanggung Jawab">
-														</div>
-													</div>
-												</div>
-											</div>
-
-											<div class="row form-horizontal">
-												<div class="col-md-8">
-													<div class="form-group">
-														<label class="col-sm-3 control-label" for="">Color</label>
-														<div class="col-sm-4">
-															
-																<input type="color" class="form-control" placeholder="color">
+														<label class="col-sm-3 control-label" for="">Color *</label>
+														<div class="col-sm-9">
+														<input type="color" class="form-control">
 														</div>
 													</div>
 												</div>
@@ -125,19 +87,29 @@
 														<label class="col-sm-3 control-label" for="">Color Code *</label>
 														<div class="col-sm-4">
 															
-																<input name="datacol" type="text" class="form-control" placeholder="Code" required>
+																<input name="data" type="text" class="form-control" placeholder="Code" value="{$datacatmedia.color.color}" required>
 														</div>
 													</div>
 												</div>
 											</div>
-											<div class="panel-footer text-left mar-btm">
-												<button type="submit" class="btn btn-info">Create</button>
-
-												<button type="reset" class="btn btn-default">Cancel</button>
+											<div class="row form-horizontal">
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class="col-sm-3 control-label" for="">Description *</label>
+														<div class="col-sm-9">
+														<textarea name="description" class="form-control" required>{$datacatmedia.description}</textarea>
+														</div>
+													</div>
+												</div>
 											</div>
 
-										</div>
-									</form>
+											<div class="panel-footer text-left mar-btm">
+												<input type="hidden" name="id" value="{$data.id}"/>
+												<button type="submit" class="btn btn-info">Save</button>
+												<button type="reset" class="btn btn-default">Cancel</button>
+											</div>
+										</form>
+									</div>
 								</div>
 								</div>
 							</div>

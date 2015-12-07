@@ -55,84 +55,106 @@
 									<div class="panel-heading">
 										<h3 class="panel-title"><i>Field dengan tanda * harus diisi</i></h3>
 									</div>
-									<div class="panel-body">
 
-										<div class="row form-horizontal">
-											<div class="col-md-8">
-												<div class="form-group">
-													<label class="col-sm-3 control-label" for="">Nama *</label>
-													<div class="col-sm-8">
-														
-															<input type="text" class="form-control" placeholder="Nama">
+									<form class="form-horizontal" action="{$basedomain}mindShare/input" method="post">
+
+										<div class="panel-body">
+
+											<div class="row form-horizontal">
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class="col-sm-3 control-label" for="">Nama *</label>
+														<div class="col-sm-8">
+															
+																<input name="name" type="text" class="form-control" placeholder="Nama" required>
+														</div>
 													</div>
 												</div>
 											</div>
+
+											<div class="row form-horizontal">
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class="col-sm-3 control-label" for="">Description *</label>
+														<div class="col-sm-8">
+																<input name="description" type="text" class="form-control" placeholder="Description" required>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class="col-sm-3 control-label" for="">&nbsp;</label>
+														<div class="col-sm-9" >
+															
+													Description digunakan untuk penamaan label di dalam grafik
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row form-horizontal">
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class="col-sm-3 control-label" for="">Color *</label>
+														<div class="col-sm-4">
+															<input type="color" class="form-control" placeholder="Description" required>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row form-horizontal">
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class="col-sm-3 control-label" for="">Color Code *</label>
+														<div class="col-sm-8">
+															
+																<input name="data" type="text" class="form-control" placeholder="Code">
+														</div>
+													</div>
+												</div>
+											</div>
+												
+											<div class="row form-horizontal">
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class="col-sm-3 control-label" for="">Company *</label>
+														<div class="col-sm-4">
+															<select name="company_id" class="selectpicker">
+																<option>--Pilih Company--</option>
+																<option value="1">PT Bla Bla Bla</option>
+																<option value="2">PT Chiby</option>
+																<option value="3">PT Ea Ea Ea</option>
+															</select>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row form-horizontal">
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class="col-sm-3 control-label" for="">Urutan *</label>
+														<div class="col-sm-4">
+															<select name="sort" class="selectpicker">
+																<option>--Pilih Urutan--</option>
+																<option value="1">Satu</option>
+																<option value="2">Dua</option>
+																<option value="3">Tiga</option>
+																<option value="4">Empat</option>
+															</select>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="panel-footer text-left mar-btm">
+
+												<button type="submit" class="btn btn-info">Create</button>
+
+												<button type="reset" class="btn btn-default">Cancel</button>
+											</div>
+
 										</div>
-
-										<div class="row form-horizontal">
-											<div class="col-md-8">
-												<div class="form-group">
-													<label class="col-sm-3 control-label" for="">Description *</label>
-													<div class="col-sm-8">
-														
-															<input type="text" class="form-control" placeholder="Description">
-													</div>
-												</div>
-											</div>
-											<div class="col-md-8">
-												<div class="form-group">
-													<label class="col-sm-3 control-label" for="">&nbsp;</label>
-													<div class="col-sm-9">
-														
-												Description digunakan untuk penamaan label di dalam grafik
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="row form-horizontal">
-											<div class="col-md-8">
-												<div class="form-group">
-													<label class="col-sm-3 control-label" for="">Color *</label>
-													<div class="col-sm-4">
-														<input type="color" class="form-control" placeholder="Description">
-													</div>
-												</div>
-											</div>
-										</div>
-
-										<div class="row form-horizontal">
-											<div class="col-md-8">
-												<div class="form-group">
-													<label class="col-sm-3 control-label" for="">Company *</label>
-													<div class="col-sm-4">
-														<select class="selectpicker">
-															<option>--Pilih Company--</option>
-														</select>
-													</div>
-												</div>
-											</div>
-										</div>
-
-										<div class="row form-horizontal">
-											<div class="col-md-8">
-												<div class="form-group">
-													<label class="col-sm-3 control-label" for="">Urutan *</label>
-													<div class="col-sm-4">
-														<select class="selectpicker">
-															<option>--Pilih Urutan--</option>
-														</select>
-													</div>
-												</div>
-											</div>
-										</div>
-
-									<div class="panel-footer text-left mar-btm">
-										<button type="submit" class="btn btn-info">Create</button>
-
-										<button type="reset" class="btn btn-default">Cancel</button>
-									</div>
-
-									</div>
+									</form>
 								</div>
 								</div>
 							</div>

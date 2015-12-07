@@ -8,7 +8,7 @@ class media extends Controller {
 	public function __construct()
 	{
 		parent::__construct();
-
+		global $app_domain;
 		global $app_domain;
 		$this->loadmodule();
 		$this->view = $this->setSmarty();
@@ -20,24 +20,137 @@ class media extends Controller {
 	}
 	public function loadmodule()
 	{
-		
-		// $this->contentHelper = $this->loadModel('contentHelper');
+		$this->contentHelper = $this->loadModel('contentHelper');
 	}
 	
 	public function index(){
-		
+		global $basedomain, $app_domain;
+
+		$datamedia=$this->contentHelper->getmedia();
+		$datacatmedia=$this->contentHelper->getcatmedia();
+
+		if ($datacatmedia){	
+			$this->view->assign('datacatmedia',$datacatmedia);
+		}
+
+		// pr($datamedia);
+		if ($datamedia){	
+			foreach ($datamedia as $key => $value) {
+				if ($value['data']) {
+					$datamedia[$key]['color'] = unserialize($value['data']);
+					$datamedia[$key]['advprice'] = unserialize($value['data']);
+				}
+
+				// pr($datamedia);
+			}
+
+			$this->view->assign('datamedia',$datamedia);
+		}
+
 
 		return $this->loadView($this->folder."media");
-
 	}
-	public function create(){
-		
 
+	public function create()
+	{
 		return $this->loadView($this->folder."create_media");
 
 	}
 
+	public function input()
+	{
+		global $CONFIG;
+		$name = $_POST['name'];
+		$media_category =$_POST['media_category'];
+		$pic = $_POST['pic'];
 
+		// $databuff['color'] = $_POST['datacol'];
+		// $databuff['advprice'] = $_POST['dataadv'];
+
+		// $data = serialize($databuff);
+
+		$data = serialize(array('color'=>$_POST['datacol'], 'advprice'=>$_POST['dataadv']));		
+
+		// pr($_POST);exit;
+		$insert=$this->contentHelper->inputmedia($name,$media_category,$pic,$data);
+
+		if($insert == 1){
+				echo "<script>alert('Data berhasil di simpan');window.location.href='".$CONFIG['admin']['base_url']."media'</script>";
+			}
+	}
+
+	public function view()
+	{
+		global $CONFIG;
+			$id = $_GET ['id'];
+
+			$datamedia=$this->contentHelper->selectmedia($id);
+			// pr($datamedia); 
+
+			if ($datamedia){	
+			foreach ($datamedia as $key => $value) {
+				if ($value['data']) {
+					$datamedia[$key]['color'] = unserialize($value['data']);
+					// $datamedia[$key]['advprice'] = unserialize($value['data']);
+				}
+			}
+
+				$this->view->assign('datamedia',$datamedia);
+			}
+
+			return $this->loadView($this->folder."view_media");
+	}
+
+	public function edit()
+	{
+		global $CONFIG;
+			$id = $_GET ['id'];
+
+			if ($_POST == null){
+				$datamedia=$this->contentHelper->selectmedia($id);
+				// pr ($datamedia); 
+				
+				if ($datamedia){	
+					foreach ($datamedia as $key => $value) {
+						if ($value['data']) {
+							$datamedia[$key]['color'] = unserialize($value['data']);
+							// $datamedia[$key]['advprice'] = unserialize($value['data']);
+						}
+					}
+
+					$this->view->assign('datamedia',$datamedia);
+				}		
+				
+				return $this->loadView($this->folder."edit_media");			
+			}
+
+			else {
+				$name = $_POST['name'];
+				$media_category =$_POST['media_category'];
+				$pic = $_POST['pic'];
+				$data = serialize(array('color'=>$_POST['data']));
+				// $data = serialize(array('advprice'=>$_POST['data']));
+
+				$update = $this->contentHelper->updatemedia($id,$name,$media_category,$pic,$data);
+				//pr($data);
+					if($update == 1){
+						echo "<script>alert('Data berhasil di simpan');window.location.href='".$CONFIG['admin']['base_url']."media'</script>";
+				}
+			}
+	}
+
+	public function delete()
+	{
+		global $CONFIG;
+			$id = $_GET ['id'];
+
+			$datamedia=$this->contentHelper->deletemedia($id);
+
+			if($datamedia == 1){
+				echo "<script>alert('Data berhasil di hapus');window.location.href='".$CONFIG['admin']['base_url']."media'</script>";
+			}
+			else {pr('gagal');}
+	}
 	
 }
 

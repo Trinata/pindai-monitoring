@@ -2,7 +2,7 @@
 <!--Page Title-->
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <div id="page-title">
-	<h1 class="page-header text-overflow">Create Rubric</h1>
+	<h1 class="page-header text-overflow">Create Source</h1>
 	
 	<!--Searchbox-->
 	<!-- <div class="searchbox">
@@ -22,7 +22,7 @@
 <ol class="breadcrumb">
 	<li><a href="{$basedomain}">Home</a></li>
 	<li><a href="{$basedomain}">Master</a></li>
-	<li class="active">Rubric</li>
+	<li class="active">Source</li>
 </ol>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <!--End breadcrumb-->
@@ -39,13 +39,13 @@
 								<!--Nav Tabs-->
 								<ul class="nav nav-tabs">
 									<li>
-										<a href="{$basedomain}rubric">Daftar Data</a>
+										<a href="{$basedomain}source">Daftar Data</a>
 									</li>
 									<li  class="active">
-										<a href="{$basedomain}rubric/create">Buat Data</a>
+										<a href="{$basedomain}source/create">Buat Data</a>
 									</li>
 									<li>
-										<a href="{$basedomain}rubric/search">Cari Data</a>
+										<a href="{$basedomain}source/search">Cari Data</a>
 									</li>
 								</ul>
 
@@ -55,38 +55,41 @@
 									<div class="panel-heading">
 										<h3 class="panel-title"><i>Field dengan tanda * harus diisi</i></h3>
 									</div>
-									<div class="panel-body">
+									
+									<form class="form-horizontal" action="{$basedomain}source/input" method="post">
+										<div class="panel-body">
 
-										<div class="row form-horizontal">
-											<div class="col-md-8">
-												<div class="form-group">
-													<label class="col-sm-3 control-label" for="">Narasumber *</label>
-													<div class="col-sm-4">
-														
-															<input type="text" class="form-control" placeholder="Narasumber">
+											<div class="row form-horizontal">
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class="col-sm-3 control-label" for="">Narasumber *</label>
+														<div class="col-sm-4">
+															
+																<input name="name" type="text" class="form-control" placeholder="Narasumber" required>
+														</div>
 													</div>
 												</div>
 											</div>
-										</div>
 
-										<div class="row form-horizontal">
-											<div class="col-md-8">
-												<div class="form-group">
-													<label class="col-sm-3 control-label" for="">Jabatan *</label>
-													<div class="col-sm-4">
-														
-															<input type="text" class="form-control" placeholder="Jabatan">
+											<div class="row form-horizontal">
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class="col-sm-3 control-label" for="">Jabatan *</label>
+														<div class="col-sm-4">
+															
+																<input name="position" type="text" class="form-control" placeholder="Jabatan" required>
+														</div>
 													</div>
 												</div>
 											</div>
+
+											<div class="panel-footer text-left mar-btm">
+												<button type="submit" class="btn btn-info">Create</button>
+
+												<button type="reset" class="btn btn-default">Cancel</button>
+											</div>
 										</div>
-									<div class="panel-footer text-left mar-btm">
-										<button type="submit" class="btn btn-info">Create</button>
-
-										<button type="reset" class="btn btn-default">Cancel</button>
-									</div>
-
-									</div>
+									</form>	
 								</div>
 								</div>
 							</div>
