@@ -1,14 +1,9 @@
-# Build and Release Folders
+
 applications/default/config/config.php
 applications/default/config/access.php
 applications/admin/config/config.php
 applications/admin/cache/*
 applications/inc/*
 public_assets/*
+tmp/*
 
-# Other files and folders
-
-
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
