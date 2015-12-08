@@ -3,23 +3,29 @@
 define ('debug', true);
 
 /* define app path */
-define ('CODEKIR_ROOTPATH', '/home/ruee/Data/xampp/htdocs/pindai-monitoring/');
+
+$DOCUMENT_ROOT = $_SERVER['DOCUMENT_ROOT'];
+
+define ('CODEKIR_ROOTPATH', $DOCUMENT_ROOT . '/pindai/pindai-monitoring/');
 
 /* define engine path */
-define ('CODEKIR_PACKAGE', '/home/ruee/Data/xampp/htdocs/new-codekir/loader/');
+define ('CODEKIR_PACKAGE', $DOCUMENT_ROOT . '/codekir/new-codekir/loader/');
 
 define ('CODEKIR_TEMPLATE', 'modern');
 
 /* 
-	define loader path, do not edit this path
+	define loader path
 */
 define ('CODEKIR_APPPATH', CODEKIR_ROOTPATH . 'applications/default/');
 define ('CODEKIR_ADMINPATH', CODEKIR_ROOTPATH . 'applications/admin/');
 define ('CODEKIR_COREPATH', CODEKIR_PACKAGE . 'engine/');
 define ('CODEKIR_LIBS', CODEKIR_PACKAGE . 'plugin/');
-define ('CODEKIR_LOGS', CODEKIR_PACKAGE . 'logs/');
-define ('CODEKIR_CACHE', CODEKIR_PACKAGE . 'cache/');
-define ('CODEKIR_TMP', CODEKIR_PACKAGE . 'tmp/');
+define ('CODEKIR_TMP', CODEKIR_ROOTPATH . 'tmp/');
+define ('CODEKIR_LOGS', CODEKIR_TMP . 'logs/');
+define ('CODEKIR_CACHE', CODEKIR_TMP . 'cache/');
+
+/* define cache database */
+define ('CACHE_DB', true);
 
 require_once (CODEKIR_COREPATH.'admin-system.php');
 
