@@ -11,6 +11,7 @@ define ('CODEKIR_ROOTPATH', $DOCUMENT_ROOT . '/pindai/pindai-monitoring/');
 /* define engine path */
 define ('CODEKIR_PACKAGE', $DOCUMENT_ROOT . '/codekir/new-codekir/loader/');
 
+
 define ('CODEKIR_TEMPLATE', 'modern');
 
 /* 

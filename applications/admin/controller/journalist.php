@@ -88,7 +88,7 @@ class journalist extends Controller {
 
 			if ($_POST == null){
 				$data = $this->contentHelper-> selectjournalist($id);
-				//pr ($data);
+				// pr ($data);
 				
 				if ($data){	
 					$this->view->assign('data',$data);
