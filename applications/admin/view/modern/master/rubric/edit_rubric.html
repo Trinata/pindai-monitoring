@@ -2,7 +2,7 @@
 <!--Page Title-->
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <div id="page-title">
-	<h1 class="page-header text-overflow">Create Rubric</h1>
+	<h1 class="page-header text-overflow">Edit Rubric</h1>
 	
 	<!--Searchbox-->
 	<!-- <div class="searchbox">
@@ -38,10 +38,10 @@
 	
 								<!--Nav Tabs-->
 								<ul class="nav nav-tabs">
-									<li>
+									<li   class="active">
 										<a href="{$basedomain}rubric">Daftar Data</a>
 									</li>
-									<li  class="active">
+									<li>
 										<a href="{$basedomain}rubric/create">Buat Data</a>
 									</li>
 									<li>
@@ -56,7 +56,7 @@
 										<h3 class="panel-title"><i>Field dengan tanda * harus diisi</i></h3>
 									</div>
 
-									<form class="form-horizontal" action="{$basedomain}rubric/input" method="post">
+									<form class="form-horizontal" action="" method="post">
 										<div class="panel-body">
 
 											<div class="row form-horizontal">
@@ -65,14 +65,14 @@
 														<label class="col-sm-3 control-label" for="">Nama *</label>
 														<div class="col-sm-4">
 															
-																<input name="name" type="text" class="form-control" placeholder="Nama">
+																<input name="name" type="text" class="form-control" value="{$data.name}" required>
 														</div>
 													</div>
 												</div>
 											</div>
 											<div class="panel-footer text-left mar-btm">
-												<button type="submit" class="btn btn-info">Create</button>
-
+												<input type="hidden" name="id" value="{$data.id}"/>
+												<button type="submit" class="btn btn-info">Save</button>
 												<button type="reset" class="btn btn-default">Cancel</button>
 											</div>
 										</div>

@@ -30,22 +30,21 @@ class journalist extends Controller {
 		global $basedomain, $app_domain;
 
 		// 
-		$data=$this->contentHelper->getjournalist();
+		// $data=$this->contentHelper->getjournalist();
 
-		if ($data){	
-			$this->view->assign('data',$data);
-		}
+		// if ($data){	
+		// 	$this->view->assign('data',$data);
+		// }
 
-		// $data['table'] = "pindai_ref";
-		// $data['condition'] = array('n_status'=>1);
+		$data['table'] = "pindai_ref_journalist";
+		$data['condition'] = array('n_status'=>1);
 
-		// $fetchData = $this->contentHelper->fetchData($data);
+		$fetchData = $this->contentHelper->fetchData($data);
 
-		// pr($data);
+		pr($data);
 		return $this->loadView($this->folder."journalist");
 
 	}
-	
 	public function create(){
 		
 		return $this->loadView($this->folder."create_journalist");
@@ -57,11 +56,11 @@ class journalist extends Controller {
 
 		$name = $_POST['name'];
 
-		$data=$this->contentHelper->inputjournalist($name);
+		//$data=$this->contentHelper->inputjournalist($name);
 
 		// pr($data);exit;
 
-		//$data=$this->contentHelper->saveData($_POST);
+		$data=$this->contentHelper->saveData($_POST);
 
 		//return $this->loadView($this->folder."journalist");
 
@@ -88,7 +87,7 @@ class journalist extends Controller {
 
 			if ($_POST == null){
 				$data = $this->contentHelper-> selectjournalist($id);
-				// pr ($data);
+				//pr ($data);
 				
 				if ($data){	
 					$this->view->assign('data',$data);

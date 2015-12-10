@@ -45,7 +45,6 @@ class journalist extends Controller {
 		return $this->loadView($this->folder."journalist");
 
 	}
-	
 	public function create(){
 		
 		return $this->loadView($this->folder."create_journalist");
@@ -88,7 +87,7 @@ class journalist extends Controller {
 
 			if ($_POST == null){
 				$data = $this->contentHelper-> selectjournalist($id);
-				// pr ($data);
+				//pr ($data);
 				
 				if ($data){	
 					$this->view->assign('data',$data);

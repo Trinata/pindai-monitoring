@@ -64,8 +64,8 @@
 											<th class="min-desktop">&nbsp;</th>
 										</tr>
 									</thead>
-									<tbody>
-
+									<tbody>					
+										
 										<tr>
 											<td>&nbsp;</td>
 											<td>
@@ -74,15 +74,22 @@
 											<td>&nbsp;
 											</td>
 										</tr>
+
+										{if !empty($data)}
+										{foreach $data as $key=> $vol}
+
 										<tr>
-											<td>1</td>
-											<td>System Architect</td>
+											<td>{$key+1}</td>
+											<td>{$vol.name}</td>
 											<td>
-												<a href="#" class="btn btn-success "><i class="fa fa-eye"></i></a>
-												<a href="#" class="btn btn-info "><i class="fa fa-pencil"></i></a>
-												<a href="#" class="btn btn-danger "><i class="fa fa-trash"></i></a>
+												<a href="{$basedomain}journalist/view/?id={$vol.id}" class="btn btn-success "><i class="fa fa-eye"></i></a>
+												<a href="{$basedomain}journalist/edit/?id={$vol.id}" class="btn btn-info "><i class="fa fa-pencil"></i></a>
+												<a href="{$basedomain}journalist/delete/?id={$vol.id}" class="btn btn-danger " onclick="return submit_confirm('Hapus data?')"><i class="fa fa-trash"></i></a>
 											</td>
 										</tr>
+										
+
+										{*}
 										<tr>
 											<td>2</td>
 											<td>Regional Director</td>
@@ -110,6 +117,10 @@
 												<a href="#" class="btn btn-danger "><i class="fa fa-trash"></i></a>
 											</td>
 										</tr>
+										{/*}
+
+										{/foreach}
+										{/if}
 									</tbody>
 								</table>
 								</div>
@@ -126,4 +137,3 @@
 </div>
 <!--===================================================-->
 <!--End page content-->
-

@@ -6,7 +6,7 @@
 */
 
 $ROUTES = array(
-			'home',
-			'login'
+				'home',
+				'login'
                 );
 ?>

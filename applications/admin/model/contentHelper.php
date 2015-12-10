@@ -71,5 +71,343 @@ class contentHelper extends Database {
 		
 		return $result;
 	}
+
+	function saveData($data=array(), $table="_event", $debug=0)
+    {
+        
+        $id = " id = {$data['id']}";
+        if ($id){
+            $run = $this->save("update", "{$this->prefix}{$table}", $data, $id, $debug);
+        }else{
+            $data['createDate'] = date('Y-m-d H:i;s');
+            $run = $this->save("insert", "{$this->prefix}{$table}", $data, false, $debug);
+    
+        }
+        if ($run) return true;
+        return false;
+    }
+
+    function fetchData($data=array(),$debug=false)
+    {
+        $table = $data['table'];
+        $condition = $data['condition'];
+        $orderby = $data['orderby'];
+        $fetch = $this->fetchSingleTable($table, $condition, $orderby, $debug);
+        if ($fetch) return $fetch;
+        return false;
+    }
+
+
+    //Media
+    function getmedia()
+	{
+		$query = "SELECT * FROM pindai_ref_media WHERE n_status = 1";
+		$result = $this->fetch($query,1); 
+		return $result;
+	}
+
+	function inputmedia($name,$media_category,$pic,$data)
+    {
+     	$query = "INSERT INTO pindai_ref_media (
+    											name,
+    											media_category,
+    											pic,
+    											data) 
+										VALUES ('".$name."',
+												'".$media_category."',
+												'".$pic."',
+												'".$data."')";
+    	$exec = $this->query($query);	
+		if($exec) return 1; else pr('query gagal');
+    }
+
+    function selectmedia($id)
+    {
+    	$query = "SELECT * FROM pindai_ref_media WHERE id ='".$id."'";
+		$result = $this->fetch($query,0,0);
+		return $result;
+    }
+
+    function updatemedia($id,$name,$media_category,$pic,$data)
+    {
+	   	$query = "UPDATE pindai_ref_media SET 
+	   											name='".$name."',
+	   											media_category='".$media_category."',
+	   											pic='".$pic."',
+	   											data='".$data."'
+	   										WHERE id = '".$id."' LIMIT 1";
+    	$exec = $this->query($query,0);	
+    	if($exec) return 1; else pr('query gagal');
+    }
+
+    function deletemedia($id)
+    {
+    	$query = "UPDATE pindai_ref_media SET n_status='2' WHERE id = '".$id."'";
+    	$exec = $this->query($query,0);	
+    	if($exec) return 1; else pr('query gagal');
+	}
+
+
+	// Category Media
+	function getcatmedia()
+	{
+		$query = "SELECT * FROM pindai_ref_media_category WHERE n_status = 1";
+		$result = $this->fetch($query,1); 
+		return $result;
+	}
+
+	function inputcatmedia($name,$description,$data)
+    {
+     	$query = "INSERT INTO pindai_ref_media_category (
+    											name,
+    											description,
+    											data) 
+										VALUES ('".$name."',
+												'".$description."',
+												'".$data."')";
+    	$exec = $this->query($query);	
+		if($exec) return 1; else pr('query gagal');
+    }
+
+    function selectcatmedia($id)
+    {
+    	$query = "SELECT * FROM pindai_ref_media_category WHERE id ='".$id."'";
+		$result = $this->fetch($query,0,0);
+		return $result;
+    }
+
+    function updatecatmedia($id,$name,$description,$data)
+    {
+	   	$query = "UPDATE pindai_ref_media_category SET 
+	   											name='".$name."',
+	   											description='".$description."',
+	   											data='".$data."'
+	   										WHERE id = '".$id."' LIMIT 1";
+    	$exec = $this->query($query,0);	
+    	if($exec) return 1; else pr('query gagal');
+    }
+
+    function deletecatmedia($id)
+    {
+    	$query = "UPDATE pindai_ref_media_category SET n_status='2' WHERE id = '".$id."'";
+    	$exec = $this->query($query,0);	
+    	if($exec) return 1; else pr('query gagal');
+	}
+
+
+    //Journalist
+
+	function getjournalist()
+	{
+		$query = "SELECT * FROM pindai_ref_journalist WHERE n_status = 1";
+
+		$result = $this->fetch($query,1); 
+		return $result;
+	}
+
+    function inputjournalist($name)
+    {
+    	$query = "INSERT INTO pindai_ref_journalist (name) VALUES ('".$name."')";
+    	$exec = $this->query($query);	
+		if($exec) return 1; else pr('query gagal');
+    }
+
+    
+    function selectjournalist($id)
+    {
+    	$query = "SELECT * FROM pindai_ref_journalist WHERE id ='".$id."'";
+		$result = $this->fetch($query,0,0);
+		return $result;
+    }
+
+    function updatejournalist($id,$name)
+    {
+	   	$query = "UPDATE pindai_ref_journalist SET name='".$name."' WHERE id = '".$id."' LIMIT 1";
+    	$exec = $this->query($query,0);	
+    	if($exec) return 1; else pr('query gagal');
+    }
+
+    function deletejournalist($id)
+    {
+    	$query = "UPDATE pindai_ref_journalist SET n_status='2' WHERE id = '".$id."'";
+    	$exec = $this->query($query,0);	
+    	if($exec) return 1; else pr('query gagal');
+    }
+
+
+    // Mind Share
+    function getmindshare()
+	{
+		$query = "SELECT * FROM pindai_ref_mindshare WHERE n_status = 1";
+		$result = $this->fetch($query,1); 
+		return $result;
+	}
+
+	function inputmindshare($name,$description,$company_id,$sort,$data)
+    {
+    	$date = date("Y-m-d H:i:s");
+    	$query = "INSERT INTO pindai_ref_mindshare (
+    											name,
+    											description,
+    											data,
+    											company_id,
+    											sort,
+    											create_date
+    											update_date) 
+										VALUES ('".$name."',
+												'".$description."',
+												'".$data."',
+												'".$company_id."',
+												'".$sort."',
+												'{$date}')";
+    	$exec = $this->query($query);	
+		if($exec) return 1; else pr('query gagal');
+    }
+
+    function selectmindshare($id)
+    {
+    	$query = "SELECT * FROM pindai_ref_mindshare WHERE id ='".$id."'";
+		$result = $this->fetch($query,0,0);
+		return $result;
+    }
+
+    function updatemindshare($id,$name,$description,$company_id,$sort,$data)
+    {
+	   	$date = date("Y-m-d H:i:s");
+	   	$query = "UPDATE pindai_ref_mindshare SET 
+	   											name='".$name."',
+	   											description='".$description."',
+	   											company_id='".$company_id."',
+	   											sort='".$sort."',
+	   											data='".$data."',
+	   											update_date='{$date}'
+	   										WHERE id = '".$id."' LIMIT 1";
+    	$exec = $this->query($query,0);	
+    	if($exec) return 1; else pr('query gagal');
+    }
+
+    function deletemindshare($id)
+    {
+    	$query = "UPDATE pindai_ref_mindshare SET n_status='2' WHERE id = '".$id."'";
+    	$exec = $this->query($query,0);	
+    	if($exec) return 1; else pr('query gagal');
+	}
+
+    
+    // Rubric
+
+	function getrubric()
+	{
+		$query = "SELECT * FROM pindai_ref_rubrik WHERE n_status = 1";
+
+		$result = $this->fetch($query,1); 
+		return $result;
+	}
+
+	function inputrubric($name)
+    {
+    	$query = "INSERT INTO pindai_ref_rubrik (name) VALUES ('".$name."')";
+    	$exec = $this->query($query);	
+		if($exec) return 1; else pr('query gagal');
+    }
+
+    function selectrubric($id)
+    {
+    	$query = "SELECT * FROM pindai_ref_rubrik WHERE id ='".$id."'";
+		$result = $this->fetch($query,0,0);
+		return $result;
+    }
+
+    function updaterubric($id,$name)
+    {
+	   	$query = "UPDATE pindai_ref_rubrik SET name='".$name."' WHERE id = '".$id."' LIMIT 1";
+    	$exec = $this->query($query,0);	
+    	if($exec) return 1; else pr('query gagal');
+    }
+
+    function deleterubric($id)
+    {
+    	$query = "UPDATE pindai_ref_rubrik SET n_status='2' WHERE id = '".$id."'";
+    	$exec = $this->query($query,0);	
+    	if($exec) return 1; else pr('query gagal');
+	}
+
+
+	// Source
+
+	function getsource()
+	{
+		$query = "SELECT * FROM pindai_ref_source WHERE n_status = 1";
+
+		$result = $this->fetch($query,1); 
+		return $result;
+	}
+
+	function inputsource($name,$position)
+    {
+    	$query = "INSERT INTO pindai_ref_source (name, position) VALUES ('".$name."', '".$position."')";
+    	$exec = $this->query($query);	
+		if($exec) return 1; else pr('query gagal');
+    }
+
+    function selectsource($id)
+    {
+    	$query = "SELECT * FROM pindai_ref_source WHERE id ='".$id."'";
+		$result = $this->fetch($query,0,0);
+		return $result;
+    }
+
+    function updatesource($id,$name,$position)
+    {
+	   	$query = "UPDATE pindai_ref_source SET name='".$name."', position='".$position."' WHERE id = '".$id."' LIMIT 1";
+    	$exec = $this->query($query,0);	
+    	if($exec) return 1; else pr('query gagal');
+    }
+
+    function deletesource($id)
+    {
+    	$query = "UPDATE pindai_ref_source SET n_status='2' WHERE id = '".$id."'";
+    	$exec = $this->query($query,0);	
+    	if($exec) return 1; else pr('query gagal');
+	}
+
+
+	// Topik
+
+	function gettopik()
+	{
+		$query = "SELECT * FROM pindai_ref_topic WHERE n_status = 1";
+
+		$result = $this->fetch($query,1); 
+		return $result;
+	}
+
+	function inputtopik($name)
+    {
+    	$query = "INSERT INTO pindai_ref_topic (name) VALUES ('".$name."')";
+    	$exec = $this->query($query);	
+		if($exec) return 1; else pr('query gagal');
+    }
+
+    function selecttopik($id)
+    {
+    	$query = "SELECT * FROM pindai_ref_topic WHERE id ='".$id."'";
+		$result = $this->fetch($query,0,0);
+		return $result;
+    }
+
+    function updatetopik($id,$name)
+    {
+	   	$query = "UPDATE pindai_ref_topic SET name='".$name."' WHERE id = '".$id."' LIMIT 1";
+    	$exec = $this->query($query,0);	
+    	if($exec) return 1; else pr('query gagal');
+    }
+
+    function deletetopik($id)
+    {
+    	$query = "UPDATE pindai_ref_topic SET n_status='2' WHERE id = '".$id."'";
+    	$exec = $this->query($query,0);	
+    	if($exec) return 1; else pr('query gagal');
+	}
 }
 ?>

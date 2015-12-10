@@ -55,46 +55,59 @@
 									<div class="panel-heading">
 										<h3 class="panel-title"><i>Field dengan tanda * harus diisi</i></h3>
 									</div>
-									<div class="panel-body">
+									
+									<form class="form-horizontal" action="{$basedomain}catMedia/input" method="post">
 
-										<div class="row form-horizontal">
-											<div class="col-md-8">
-												<div class="form-group">
-													<label class="col-sm-3 control-label" for="">Nama</label>
-													<div class="col-sm-4">
-														
-															<input type="text" class="form-control" placeholder="Nama">
+										<div class="panel-body">
+
+											<div class="row form-horizontal">
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class="col-sm-3 control-label" for="">Nama *</label>
+														<div class="col-sm-4">
+															
+																<input name="name" type="text" class="form-control" placeholder="Nama" required>
+														</div>
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="row form-horizontal">
-											<div class="col-md-8">
-												<div class="form-group">
-													<label class="col-sm-3 control-label" for="">Color</label>
-													<div class="col-sm-9">
-													<input type="color" class="form-control" >
+											<div class="row form-horizontal">
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class="col-sm-3 control-label" for="">Color *</label>
+														<div class="col-sm-9">
+														<input type="color" class="form-control">
+														</div>
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="row form-horizontal">
-											<div class="col-md-8">
-												<div class="form-group">
-													<label class="col-sm-3 control-label" for="">Description</label>
-													<div class="col-sm-9">
-													<textarea class="form-control" placeholder="Descritpion">
-													</textarea>
+											<div class="row form-horizontal">
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class="col-sm-3 control-label" for="">Color Code *</label>
+														<div class="col-sm-4">
+															
+																<input name="data" type="text" class="form-control" placeholder="Code" required>
+														</div>
 													</div>
 												</div>
 											</div>
-										</div>
-									<div class="panel-footer text-left mar-btm">
-										<button type="submit" class="btn btn-info">Create</button>
+											<div class="row form-horizontal">
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class="col-sm-3 control-label" for="">Description *</label>
+														<div class="col-sm-9">
+														<textarea name="description" class="form-control" placeholder="Descritpion" required></textarea>
+														</div>
+													</div>
+												</div>
+											</div>
 
-										<button type="reset" class="btn btn-default">Cancel</button>
-									</div>
-
+											<div class="panel-footer text-left mar-btm">
+												<button type="submit" class="btn btn-info">Create</button>
+												<button type="reset" class="btn btn-default">Cancel</button>
+											</div>
+										</form>
 									</div>
 								</div>
 								</div>

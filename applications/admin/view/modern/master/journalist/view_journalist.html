@@ -2,7 +2,7 @@
 <!--Page Title-->
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <div id="page-title">
-	<h1 class="page-header text-overflow">Create Rubric</h1>
+	<h1 class="page-header text-overflow">View Journalist</h1>
 	
 	<!--Searchbox-->
 	<!-- <div class="searchbox">
@@ -22,7 +22,7 @@
 <ol class="breadcrumb">
 	<li><a href="{$basedomain}">Home</a></li>
 	<li><a href="{$basedomain}">Master</a></li>
-	<li class="active">Rubric</li>
+	<li class="active">Journalist</li>
 </ol>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <!--End breadcrumb-->
@@ -34,18 +34,18 @@
 		<!-- <div class="col-lg-12"> -->
 			<!-- <div class="panel"> -->
 						<!-- <div class="panel-body"> -->
-							<div class="tab-base">
+							<div class="tab-base" >
 	
 								<!--Nav Tabs-->
 								<ul class="nav nav-tabs">
-									<li>
-										<a href="{$basedomain}rubric">Daftar Data</a>
-									</li>
-									<li  class="active">
-										<a href="{$basedomain}rubric/create">Buat Data</a>
+									<li class="active">
+										<a href="{$basedomain}journalist">Daftar Data</a>
 									</li>
 									<li>
-										<a href="{$basedomain}rubric/search">Cari Data</a>
+										<a href="{$basedomain}journalist/create">Buat Data</a>
+									</li>
+									<li>
+										<a href="{$basedomain}journalist/search">Cari Data</a>
 									</li>
 								</ul>
 
@@ -53,28 +53,37 @@
 								
 								<div class="panel">
 									<div class="panel-heading">
-										<h3 class="panel-title"><i>Field dengan tanda * harus diisi</i></h3>
+										<h3 class="panel-title"><i>Field Journalist</i></h3>
 									</div>
-
-									<form class="form-horizontal" action="{$basedomain}rubric/input" method="post">
+									
+									<form class="form-horizontal" action="{$basedomain}journalist" method="post">
 										<div class="panel-body">
+												<div class="row form-horizontal">
+													<div class="col-md-8">
+														<div class="form-group">
+															<label class="col-sm-3 control-label" for="">ID :</label>
+															<div class="col-sm-8">
 
-											<div class="row form-horizontal">
-												<div class="col-md-8">
-													<div class="form-group">
-														<label class="col-sm-3 control-label" for="">Nama *</label>
-														<div class="col-sm-4">
-															
-																<input name="name" type="text" class="form-control" placeholder="Nama">
+																		<label class="col-sm-3 control-label" for="">{$data.id}</label>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-3 control-label" for="">Journalist  :</label>
+															<div class="col-sm-8">
+
+																	<label class="col-sm-3 control-label" for="">{$data.name}</label>
+															</div>
 														</div>
 													</div>
 												</div>
-											</div>
-											<div class="panel-footer text-left mar-btm">
-												<button type="submit" class="btn btn-info">Create</button>
+												
+												<div class="panel-footer text-left mar-btm" >
+													<button type="submit" class="btn btn-info">Back</button>
+												</div>
+												{*}
+													<button type="reset" class="btn btn-default">Cancel</button>
+												{/*}
 
-												<button type="reset" class="btn btn-default">Cancel</button>
-											</div>
 										</div>
 									</form>
 								</div>

@@ -38,10 +38,10 @@
 	
 								<!--Nav Tabs-->
 								<ul class="nav nav-tabs">
-									<li>
+									<li   class="active">
 										<a href="{$basedomain}rubric">Daftar Data</a>
 									</li>
-									<li  class="active">
+									<li>
 										<a href="{$basedomain}rubric/create">Buat Data</a>
 									</li>
 									<li>
@@ -53,28 +53,36 @@
 								
 								<div class="panel">
 									<div class="panel-heading">
-										<h3 class="panel-title"><i>Field dengan tanda * harus diisi</i></h3>
+										<h3 class="panel-title"><i>Field Rubric</i></h3>
 									</div>
 
-									<form class="form-horizontal" action="{$basedomain}rubric/input" method="post">
+									<form class="form-horizontal" action="{$basedomain}rubric" method="post">
 										<div class="panel-body">
 
 											<div class="row form-horizontal">
 												<div class="col-md-8">
 													<div class="form-group">
-														<label class="col-sm-3 control-label" for="">Nama *</label>
-														<div class="col-sm-4">
-															
-																<input name="name" type="text" class="form-control" placeholder="Nama">
+															<label class="col-sm-3 control-label" for="">ID :</label>
+															<div class="col-sm-8">
+
+																		<label class="col-sm-3 control-label" for="">{$data.id}</label>
+															</div>
 														</div>
-													</div>
+														<div class="form-group">
+															<label class="col-sm-3 control-label" for="">Rubric  :</label>
+															<div class="col-sm-8">
+
+																	<label class="col-sm-3 control-label" for="">{$data.name}</label>
+															</div>
+														</div>
 												</div>
 											</div>
-											<div class="panel-footer text-left mar-btm">
-												<button type="submit" class="btn btn-info">Create</button>
-
-												<button type="reset" class="btn btn-default">Cancel</button>
-											</div>
+											<div class="panel-footer text-left mar-btm" >
+													<button type="submit" class="btn btn-info">Back</button>
+												</div>
+												{*}
+													<button type="reset" class="btn btn-default">Cancel</button>
+												{/*}
 										</div>
 									</form>
 								</div>
