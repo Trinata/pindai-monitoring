@@ -1,5 +1,4 @@
 <?php
-// defined ('TATARUANG') or exit ( 'Forbidden Access' );
 
 class blog extends Controller {
 	
@@ -14,7 +13,6 @@ class blog extends Controller {
 		$this->view = $this->setSmarty();
 		$sessionAdmin = new Session;
 		$this->admin = $sessionAdmin->get_session();
-		// $this->validatePage();
 		$this->view->assign('app_domain',$app_domain);
 	}
 	public function loadmodule()

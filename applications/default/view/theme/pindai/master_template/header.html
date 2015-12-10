@@ -1,0 +1,96 @@
+<div id="header" class="sticky"> <!-- class="sticky" for sticky menu -->
+
+    <!-- Top Bar -->
+    <header id="topBar">
+        <div class="container">
+
+            <div class="pull-left fsize13 hide_mobile">
+
+                <div class="block text-right"><!-- social -->
+                    {*}<a href="#" class="social fa fa-facebook"></a>
+                    <a href="#" class="social fa fa-twitter"></a>
+                    <a href="#" class="social fa fa-google-plus"></a>
+                    <a href="#" class="social fa fa-linkedin"></a>
+                    <a href="#" class="social fa fa-pinterest"></a>{/*}
+                </div><!-- /social -->
+
+            </div>
+
+            <div id="barMain">
+                <nav class="nav-second">
+                    <ul class="nav nav-pills nav-second">
+                        <li><a href="{$basedomain}user"><i class="fa fa-user"></i> Register</a></li>
+                        <li><a href="{$basedomain}user"><i class="fa fa-sign-in"></i> Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div><!-- /.container -->
+    </header>
+    <!-- /Top Bar -->
+
+
+    <!-- Top Nav -->
+    <header id="topNav">
+        <div class="container">
+
+            <!-- Logo -->
+            <a class="logo" href="{$basedomain}">
+                <img src="{$basedomain}applications/default/assets/images/logo-pom.png" height="40" alt="" />
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <!-- Search -->
+            <form class="search" method="get" action="#">
+                <input type="text" class="form-control" name="s" value="" placeholder="Search">
+                <button class="fa fa-search"></button>
+            </form>
+            <!-- /Search -->
+
+            <!-- Top Nav -->
+            <div class="navbar-collapse nav-main-collapse collapse">
+                <nav class="nav-main">
+
+                    <!--
+                        NOTE
+                        
+                        For a regular link, remove "dropdown" class from LI tag and "dropdown-toggle" class from the href.
+                        Direct Link Example: 
+
+                        <li>
+                            <a href="#">HOME</a>
+                        </li>
+                    -->
+                    <ul id="topMain" class="nav nav-pills nav-main">
+                        <li class="mega-menu active">
+                            <a class="" href="{$basedomain}">
+                                HOME <span>depan</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a class="" href="#">REPORT <span>cetak</span></a>
+                        </li>
+                        <li class="">
+                            <a class="" href="#">SUMMARY <span>tv</span></a>
+                        </li>
+                        <li class="">
+                            <a class="" href="#">ARCHIEVE <span>arsip</span></a>
+                        </li>
+                        <li class="">
+                            <a class="" href="#">STATISTIC <span>grafik</span></a>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+            <!-- /Top Nav -->
+
+        </div><!-- /.container -->
+    </header>
+    <!-- /Top Nav -->
+
+</div>

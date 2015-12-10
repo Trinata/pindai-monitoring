@@ -1,5 +1,4 @@
 <?php
-// defined ('TATARUANG') or exit ( 'Forbidden Access' );
 
 class company extends Controller {
 	
@@ -14,13 +13,11 @@ class company extends Controller {
 		$this->view = $this->setSmarty();
 		$sessionAdmin = new Session;
 		$this->admin = $sessionAdmin->get_session();
-		// $this->validatePage();
 		$this->view->assign('app_domain',$app_domain);
 		$this->folder=CODEKIR_TEMPLATE.'/master/company/';
 	}
 	public function loadmodule()
-	{
-		
+	{		
 		$this->contentHelper = $this->loadModel('contentHelper');
 	}
 	

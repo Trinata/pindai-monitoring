@@ -1,5 +1,4 @@
 <?php
-// defined ('TATARUANG') or exit ( 'Forbidden Access' );
 
 class journalist extends Controller {
 	
@@ -14,7 +13,6 @@ class journalist extends Controller {
 		$this->view = $this->setSmarty();
 		$sessionAdmin = new Session;
 		$this->admin = $sessionAdmin->get_session();
-		// $this->validatePage();
 		$this->view->assign('app_domain',$app_domain);
 		$this->folder=CODEKIR_TEMPLATE.'/master/journalist/';
 	}
@@ -37,12 +35,6 @@ class journalist extends Controller {
 			$this->view->assign('data',$data);
 		}
 
-		// $data['table'] = "pindai_ref";
-		// $data['condition'] = array('n_status'=>1);
-
-		// $fetchData = $this->contentHelper->fetchData($data);
-
-		// pr($data);
 		return $this->loadView($this->folder."journalist");
 
 	}
@@ -59,12 +51,6 @@ class journalist extends Controller {
 		$name = $_POST['name'];
 
 		$data=$this->contentHelper->inputjournalist($name);
-
-		// pr($data);exit;
-
-		//$data=$this->contentHelper->saveData($_POST);
-
-		//return $this->loadView($this->folder."journalist");
 
 		if($data == 1){
 				echo "<script>alert('Data berhasil di simpan');window.location.href='".$CONFIG['admin']['base_url']."journalist'</script>";
@@ -89,7 +75,6 @@ class journalist extends Controller {
 
 			if ($_POST == null){
 				$data = $this->contentHelper-> selectjournalist($id);
-				// pr ($data);
 				
 				if ($data){	
 					$this->view->assign('data',$data);
@@ -100,16 +85,13 @@ class journalist extends Controller {
 
 			else {
 				$name = $_POST['name'];
-				//pr($_POST);
 
 				$data = $this->contentHelper->updatejournalist($id,$name);
-				//pr($data);
 					if($data == 1){
 						echo "<script>alert('Data berhasil di simpan');window.location.href='".$CONFIG['admin']['base_url']."journalist'</script>";
 				}
 			}
 
-		//return $this->loadView($this->folder."journalist/edit_journalist");
 
 	}
 

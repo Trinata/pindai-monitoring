@@ -6,4 +6,5 @@ applications/admin/cache/*
 applications/inc/*
 public_assets/*
 tmp/*
+applications//inc/*
 
