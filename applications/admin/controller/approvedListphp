@@ -1,5 +1,4 @@
 <?php
-// defined ('TATARUANG') or exit ( 'Forbidden Access' );
 
 class approvedList extends Controller {
 	
@@ -14,14 +13,12 @@ class approvedList extends Controller {
 		$this->view = $this->setSmarty();
 		$sessionAdmin = new Session;
 		$this->admin = $sessionAdmin->get_session();
-		// $this->validatePage();
 		$this->view->assign('app_domain',$app_domain);
 		$this->folder=CODEKIR_TEMPLATE.'/contentManagement/approvedList/';
 	}
 	public function loadmodule()
 	{
 		
-		// $this->contentHelper = $this->loadModel('contentHelper');
 	}
 	
 	public function index(){

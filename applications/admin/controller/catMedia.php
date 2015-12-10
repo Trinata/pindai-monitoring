@@ -1,5 +1,4 @@
 <?php
-// defined ('TATARUANG') or exit ( 'Forbidden Access' );
 
 class catMedia extends Controller {
 	
@@ -14,7 +13,6 @@ class catMedia extends Controller {
 		$this->view = $this->setSmarty();
 		$sessionAdmin = new Session;
 		$this->admin = $sessionAdmin->get_session();
-		// $this->validatePage();
 		$this->view->assign('app_domain',$app_domain);
 		$this->folder=CODEKIR_TEMPLATE.'/master/catMedia/';
 	}
@@ -27,13 +25,11 @@ class catMedia extends Controller {
 		global $basedomain, $app_domain;
 
 		$datacatmedia=$this->contentHelper->getcatmedia();
-		// pr($datacatmedia);
 		if ($datacatmedia){	
 			foreach ($datacatmedia as $key => $value) {
 				if ($value['data']) $datacatmedia[$key]['color'] = unserialize($value['data']);
 			}
 
-			// pr($datacatmedia);
 			$this->view->assign('datacatmedia',$datacatmedia);
 		}
 
@@ -53,7 +49,6 @@ class catMedia extends Controller {
 		$description =$_POST['description'];
 		$data = serialize(array('color'=>$_POST['data']));
 
-		// pr($_POST);exit;
 		$insert=$this->contentHelper->inputcatmedia($name,$description,$data);
 
 		if($insert == 1){
@@ -67,12 +62,10 @@ class catMedia extends Controller {
 			$id = $_GET ['id'];
 
 			$datacatmedia=$this->contentHelper->selectcatmedia($id);
-			pr($datacatmedia); 
-
+			
 			if($datacatmedia){
 					if 	($datacatmedia['data']) $datacatmedia['color'] = unserialize($datacatmedia['data']);
 	
-				// pr($datacatmedia);
 				$this->view->assign('datacatmedia',$datacatmedia);
 			}
 
@@ -86,12 +79,10 @@ class catMedia extends Controller {
 
 			if ($_POST == null){
 				$datacatmedia=$this->contentHelper->selectcatmedia($id);
-				// pr ($datacatmedia); 
 				
 				if($datacatmedia){
 						if 	($datacatmedia['data']) $datacatmedia['color'] = unserialize($datacatmedia['data']);
 	
-					// pr($datacatmedia);
 					$this->view->assign('datacatmedia',$datacatmedia);
 				}		
 				
@@ -102,10 +93,8 @@ class catMedia extends Controller {
 				$name = $_POST['name'];
 				$description =$_POST['description'];
 				$data = serialize(array('color'=>$_POST['data']));
-				//pr($_POST);
 
 				$update = $this->contentHelper->updatecatmedia($id,$name,$description,$data);
-				//pr($data);
 					if($update == 1){
 						echo "<script>alert('Data berhasil di simpan');window.location.href='".$CONFIG['admin']['base_url']."catMedia'</script>";
 				}
