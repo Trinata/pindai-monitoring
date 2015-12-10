@@ -32,6 +32,7 @@ class journalist extends Controller {
 		// 
 		$data=$this->contentHelper->getjournalist();
 
+		//kirim data dari controler ke template
 		if ($data){	
 			$this->view->assign('data',$data);
 		}

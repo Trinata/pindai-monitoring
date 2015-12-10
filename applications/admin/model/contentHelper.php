@@ -409,5 +409,100 @@ class contentHelper extends Database {
     	$exec = $this->query($query,0);	
     	if($exec) return 1; else pr('query gagal');
 	}
+
+	function coba2()
+	{
+		$sql = array(
+                'table'=>"ck_user_member",
+                'field'=>"*",
+                'condition' => "n_status = 1",
+                );
+        $res = $this->lazyQuery($sql,$debug);
+        if ($res) return $res;
+        return false;
+	}
+
+	//Industry
+
+	function getindustry()
+	{
+		$query = "SELECT * FROM pindai_ref_industry WHERE n_status = 1";
+
+		$result = $this->fetch($query,1); 
+		return $result;
+	}
+
+	function inputindustry($name)
+    {
+    	$query = "INSERT INTO pindai_ref_industry (name) VALUES ('".$name."')";
+    	$exec = $this->query($query);	
+		if($exec) return 1; else pr('query gagal');
+    }
+
+     function selectindustry($id)
+    {
+    	$query = "SELECT * FROM pindai_ref_industry WHERE id ='".$id."'";
+		$result = $this->fetch($query,0,0);
+		return $result;
+    }
+
+    function updateindustry($id,$name)
+    {
+	   	$query = "UPDATE pindai_ref_industry SET name='".$name."' WHERE id = '".$id."' LIMIT 1";
+    	$exec = $this->query($query,0,2);	
+    	if($exec) return 1; else pr('query gagal');
+    }
+
+    function deleteindustry($id)
+    {
+    	$query = "UPDATE pindai_ref_industry SET n_status='2' WHERE id = '".$id."'";
+    	$exec = $this->query($query,0,2);	
+    	if($exec) return 1; else pr('query gagal');
+	}
+
+	//Company
+
+	function getcompany()
+	{
+		$query = "SELECT * FROM pindai_ref_company WHERE n_status = 1";
+
+		$result = $this->fetch($query,1); 
+		return $result;
+	}
+
+	function gettemplate(){
+		$query = "SELECT * FROM ck_template WHERE n_status = 1";
+
+		$result = $this->fetch($query,1); 
+		return $result;
+	}
+
+	function inputcompany($name,$id_industry,$template,$color,$email,$logo,$description)
+    {
+    	$date = date("Y-m-d H:i:s");
+    	$query = "INSERT INTO pindai_ref_company (
+    											name,
+    											id_industry,
+    											template,
+    											color,
+    											email,
+    											logo,
+    											description,
+    											create_date
+    											update_date) 
+										VALUES ('".$name."',
+												'".$id_industry."',
+												'".$template."',
+												'".$color."',
+												'".$email."',
+												'".$logo."',
+												'".$description."',
+												'{$date}')";
+    	$exec = $this->query($query);	
+		if($exec) return 1; else pr('query gagal');
+    }
+
+
+
 }
 ?>

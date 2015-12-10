@@ -21,11 +21,13 @@ class user extends Controller {
 	public function loadmodule()
 	{
 		
-		// $this->contentHelper = $this->loadModel('contentHelper');
+		$this->contentHelper = $this->loadModel('contentHelper');
 	}
 	
 	public function index(){
 
+		$getData = $this->contentHelper->coba2();
+		pr($getData);
 		return $this->loadView($this->folder."user");
 
 	}
