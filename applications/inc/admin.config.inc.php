@@ -3,10 +3,10 @@
 define ('debug', true);
 
 /* define app path */
-define ('CODEKIR_ROOTPATH', '/home/ovancop/Data/htdocs/pindai/pindai-monitoring/');
+define ('CODEKIR_ROOTPATH', '/home/andreass/data/xampp/htdocs/pindai-monitoring/');
 
 /* define engine path */
-define ('CODEKIR_PACKAGE', '/home/ovancop/Data/htdocs/codekir/new-codekir/loader/');
+define ('CODEKIR_PACKAGE', '/home/andreass/data/xampp/htdocs/new-codekir/loader/');
 
 define ('CODEKIR_TEMPLATE', 'modern');
 
