@@ -99,9 +99,9 @@
 											<td>{$key+1}</td>
 											<td>{$value.name}</td>
 											<td>{$value.pic}</td>
-											<td>{$value.color.color}</td>
+											<td>{$value.color}</td>
 											<td>{$value.media_category}</td>
-											<td>{money_format("Rp %.2n",$value.advprice.advprice)}</td>
+											<td>Rp {$value.advprice|number_format}.00</td>
 											<td>
 												<a href="{$basedomain}media/view/?id={$value.id}" class="btn btn-success "><i class="fa fa-eye"></i></a>
 												<a href="{$basedomain}media/edit/?id={$value.id}" class="btn btn-info "><i class="fa fa-pencil"></i></a>
