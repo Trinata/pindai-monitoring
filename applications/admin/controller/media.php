@@ -36,9 +36,11 @@ class media extends Controller {
 		// pr($datamedia);
 		if ($datamedia){	
 			foreach ($datamedia as $key => $value) {
+				// pr(unserialize($value['data']));
 				if ($value['data']) {
-					$datamedia[$key]['color'] = unserialize($value['data']);
-					$datamedia[$key]['advprice'] = unserialize($value['data']);
+					$unserial = unserialize($value['data']);
+					$datamedia[$key]['color'] = $unserial['color'];
+					$datamedia[$key]['advprice'] = $unserial['advprice'];
 				}
 
 				// pr($datamedia);
@@ -53,6 +55,8 @@ class media extends Controller {
 
 	public function create()
 	{
+		// ambil data cat media
+		
 		return $this->loadView($this->folder."create_media");
 
 	}
