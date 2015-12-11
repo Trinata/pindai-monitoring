@@ -77,13 +77,21 @@
 											</td>
 											<td>
 												<select class="selectpicker">
-													<option></option>
+												{if !empty($data_industry)}
+												{foreach $data_industry as $key=> $value}
+													<option>{$value.name}</option>
+												{/foreach}
+												{/if}
 												</select>
 											</td>
 											<td>&nbsp;</td>
 											<td>
 												<select class="selectpicker">
-													<option></option>
+												{if !empty($data_template)}
+												{foreach $data_template as $key=> $value}
+													<option>{$value.name}</option>
+												{/foreach}
+												{/if}
 												</select>
 											</td>
 											<td>&nbsp;</td>

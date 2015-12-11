@@ -38,7 +38,7 @@
 				<a href="{$basedomain}company">Daftar Data</a>
 			</li>
 			<li  class="active">
-				<a href="{$basedomain}company/create">Buat Data</a>
+				<a href="{$basedomain}company/create">Add Data</a>
 			</li>
 			<li>
 				<a href="{$basedomain}company/search">Cari Data</a>
@@ -180,11 +180,20 @@
 					<label class="col-sm-2 control-label" for="">Info Field</label>
 					<div class="col-md-10">
 						<div class="col-md-3 form-block">
+							{if !empty($data.file.info_field)}							
+							{foreach $data.file.info_field as $key=> $value}
+							
+							<div class="checkbox">
+								<label class="form-normal form-primary form-text">{$value}</label>
+							</div>
 
+							{/foreach}
+							{/if}
+							{*}
 							<!-- Checkboxes -->
 							<div class="checkbox">
 								<label class="form-checkbox form-normal form-primary form-text">
-								<input name="info_field" type="checkbox" value="judul"> Judul</label>
+								<input name="info_field" type="checkbox" value="judul" checked="checked"> Judul</label>
 							</div>
 							<div class="checkbox">
 								<label class="form-checkbox form-normal form-primary form-text">
@@ -250,6 +259,7 @@
 							<div class="checkbox">
 								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Edisi</label>
 							</div>
+							{/*}
 
 						</div>
 					</div>
@@ -264,6 +274,17 @@
 					<label class="col-sm-2 control-label" for="">Search Field</label>
 					<div class="col-md-10">
 						<div class="col-md-3 form-block">
+
+						{if !empty($data.file.search_field)}							
+						{foreach $data.file.search_field as $key=> $value}
+						
+						<div class="checkbox">
+							<label class="form-normal form-primary form-text">{$value}</label>
+						</div>
+						
+						{/foreach}
+						{/if}
+						{*}
 
 							<!-- Checkboxes -->
 							<div class="checkbox">
@@ -313,6 +334,7 @@
 							<div class="checkbox">
 								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Koran Asing</label>
 							</div>
+							{/*}
 
 						</div>
 					</div>
@@ -328,6 +350,17 @@
 					<label class="col-sm-2 control-label" for="">Menu Statistic</label>
 					<div class="col-md-10">
 						<div class="col-md-3 form-block">
+
+						{if !empty($data.file.menu_statistic)}							
+						{foreach $data.file.menu_statistic as $key=> $value}
+						
+							<div class="checkbox">
+								<label class="form-normal form-primary form-text">{$value}</label>
+							</div>
+						
+						{/foreach}
+						{/if}
+						{*}
 
 							<!-- Checkboxes -->
 							<div class="checkbox">
@@ -383,6 +416,7 @@
 							<div class="checkbox">
 								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Quotes</label>
 							</div>
+							{/*}
 
 						</div>
 					</div>

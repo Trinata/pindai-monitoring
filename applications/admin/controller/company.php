@@ -27,6 +27,8 @@ class company extends Controller {
 		global $basedomain, $app_domain;
 		
 		$data=$this->contentHelper->getcompany();
+		$data_industry=$this->contentHelper->getindustry();
+		$data_template=$this->contentHelper->gettemplate();
 
 		if ($data){	
 			foreach ($data as $key => $value) {
@@ -35,6 +37,8 @@ class company extends Controller {
 				//print_r($data[$key]['seri2']);				
 			}
 
+			$this->view->assign('data_industry',$data_industry);
+			$this->view->assign('data_template',$data_template);	
 			$this->view->assign('data',$data);
 		}		
 
@@ -47,10 +51,8 @@ class company extends Controller {
 		$data_industry=$this->contentHelper->getindustry();
 		$data_template=$this->contentHelper->gettemplate();
 
-		if ($data_industry){	
+		if ($data_industry || $data_template){	
 			$this->view->assign('data_industry',$data_industry);
-		}
-		if ($data_template) {
 			$this->view->assign('data_template',$data_template);
 		}
 
@@ -62,6 +64,9 @@ class company extends Controller {
 	public function input()
 	{
 		global $CONFIG;
+
+	    $data = serialize(array('login_page'=> $_POST['login_page'],'login' => $_POST['login'],'logo_pdf' => $_POST['logo_pdf'],
+		'info_field' =>$_POST['info_field'] , 'search_field'=>$_POST['search_field'], 'menu_statistic'=>$_POST['menu_statistic']));
 		$name = $_POST['name'];
 		$id_industry = $_POST['id_industry'];
 		$template = $_POST['template'];
@@ -69,13 +74,8 @@ class company extends Controller {
 			'stack_color'=>$_POST['stack_color'],'menu_color'=>$_POST['menu_color'],'menu_sel_color'=>$_POST['menu_sel_color']));
 		$email = $_POST['email'];
 		$logo = $_POST['logo'];
-		$data = serialize(array('login_page'=> $_POST['login_page'],'login' => $_POST['login'],'logo_pdf' => $_POST['logo_pdf']));
 		$description =$_POST['description'];
-		//$data1 = $_POST['data'];
-		//$data = serialize(array('color'=>$_POST['data']));
-
-		// pr($_POST);exit;
-
+		
 		$insert=$this->contentHelper->inputcompany($name,$id_industry,$template,$color,$email,$logo,$data,$description);
 
 		if($insert == 1){
@@ -106,6 +106,18 @@ class company extends Controller {
 		global $CONFIG;
 			$id = $_GET ['id'];
 
+
+			$data_industry=$this->contentHelper->getindustry();
+			$data_template=$this->contentHelper->gettemplate();
+
+			if ($data_industry){	
+				$this->view->assign('data_industry',$data_industry);
+			}
+
+			if ($data_template) {
+				$this->view->assign('data_template',$data_template);
+			}
+
 			if ($_POST == null){
 				$data=$this->contentHelper->selectcompany($id);
 				
@@ -121,6 +133,9 @@ class company extends Controller {
 			}
 
 			else {
+
+				$data = serialize(array('login_page'=> $_POST['login_page'],'login' => $_POST['login'],'logo_pdf' => $_POST['logo_pdf'],
+				'info_field' =>$_POST['info_field'] , 'search_field'=>$_POST['search_field'], 'menu_statistic'=>$_POST['menu_statistic']));			    
 				$name = $_POST['name'];
 				$id_industry = $_POST['id_industry'];
 				$template = $_POST['template'];
@@ -128,12 +143,10 @@ class company extends Controller {
 					'stack_color'=>$_POST['stack_color'],'menu_color'=>$_POST['menu_color'],'menu_sel_color'=>$_POST['menu_sel_color']));
 				$email = $_POST['email'];
 				$logo = $_POST['logo'];
-				$data = serialize(array('login_page'=> $_POST['login_page'],'login' => $_POST['login'],'logo_pdf' => $_POST['logo_pdf']));
 				$description =$_POST['description'];
 				$update = $this->contentHelper->updatecompany($id,$name,$id_industry,$template,$color,$email,$logo,$data,$description);
-				//pr($data);
-					if($update == 1){
-						echo "<script>alert('Data berhasil di simpan');window.location.href='".$CONFIG['admin']['base_url']."company'</script>";
+				if($update == 1){
+					echo "<script>alert('Data berhasil di simpan');window.location.href='".$CONFIG['admin']['base_url']."company'</script>";
 				}
 			}
 	}
@@ -149,6 +162,20 @@ class company extends Controller {
 				echo "<script>alert('Data berhasil di hapus');window.location.href='".$CONFIG['admin']['base_url']."company'</script>";
 			}
 			else {pr('gagal');}
+	}
+
+	public function search()
+	{
+		global $CONFIG;
+			$name = $_GET['name'];
+
+			$data=$this->contentHelper->search($name);
+
+			$this->view->assign('data',$data);
+
+			return $this->loadView($this->folder."company");
+
+
 	}
 
 
