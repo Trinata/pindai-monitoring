@@ -2,7 +2,7 @@
 <!--Page Title-->
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <div id="page-title">
-	<h1 class="page-header text-overflow">Management Company</h1>
+	<h1 class="page-header text-overflow">View Company</h1>
 	
 	<!--Searchbox-->
 	<!-- <div class="searchbox">
@@ -101,16 +101,16 @@
 											<td>{$key+1}</td>
 											<td>{$value.name}</td>
 											<td>{$value.industry_id}</td>
-											<td>{$value.color}</td>
+											<td>{$value.color.bg_color}</td>
 											<td>{$value.template}</td>
 											<td>{$value.logo}</td>
-											<td>{$value.logo}</td>
-											<td>{$value.logo}</td>											
+											<td>{$value.file.login}</td>
+											<td>{$value.file.logo_pdf}</td>											
 
 											<td>
-												<a href="{$basedomain}mindShare/view/?id={$value.id}" class="btn btn-success "><i class="fa fa-eye"></i></a>
-												<a href="{$basedomain}mindShare/edit/?id={$value.id}" class="btn btn-info "><i class="fa fa-pencil"></i></a>
-												<a href="{$basedomain}mindShare/delete/?id={$value.id}" class="btn btn-danger " onclick="return submit_confirm('Hapus data?')"><i class="fa fa-trash"></i></a>
+												<a href="{$basedomain}company/view/?id={$value.id}" class="btn btn-success "><i class="fa fa-eye"></i></a>
+												<a href="{$basedomain}company/edit/?id={$value.id}" class="btn btn-info "><i class="fa fa-pencil"></i></a>
+												<a href="{$basedomain}company/delete/?id={$value.id}" class="btn btn-danger " onclick="return submit_confirm('Hapus data?')"><i class="fa fa-trash"></i></a>
 											</td>
 										</tr>
 

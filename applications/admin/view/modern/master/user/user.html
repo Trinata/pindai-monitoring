@@ -60,6 +60,21 @@
 										</tr>
 									</thead>
 									<tbody>
+									{if !empty($data)}
+									{foreach $data as $key=> $value}
+										<tr>
+											<td>{$key+1}</td>
+											<td>{$value.name}</td>
+										
+											<td>
+												<a href="{$basedomain}user/view/?id={$value.id}" class="btn btn-success "><i class="fa fa-eye"></i></a>
+												<a href="{$basedomain}user/edit/?id={$value.id}" class="btn btn-info "><i class="fa fa-pencil"></i></a>
+												<a href="{$basedomain}user/delete/?id={$value.id}" class="btn btn-danger " onclick="return submit_confirm('Hapus data?')"><i class="fa fa-trash"></i></a>
+											</td>
+										</tr>
+
+										{*}
+
 										<tr>
 											<td>Tiger Nixon</td>
 											<td>System Architect</td>
@@ -96,6 +111,11 @@
 												<a href="#" class="btn btn-danger "><i class="fa fa-trash"></i></a>
 											</td>
 										</tr>
+
+										{/*}
+
+										{/foreach}
+										{/if}
 									</tbody>
 								</table>
 								</div>

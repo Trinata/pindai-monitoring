@@ -432,6 +432,18 @@ class contentHelper extends Database {
 		return $result;
 	}
 
+	function getindustrycolumn()
+	{
+		$sql = array(
+                'table'=>"information_schema.columns",
+                'field'=>"column_name",
+                'condition' => "table_name = pindai_ref_industry",
+                );
+        $res = $this->lazyQuery($sql,$debug);
+        if ($res) return $res;
+        return false;
+	}
+
 	function inputindustry($name)
     {
     	$query = "INSERT INTO pindai_ref_industry (name) VALUES ('".$name."')";
@@ -449,14 +461,14 @@ class contentHelper extends Database {
     function updateindustry($id,$name)
     {
 	   	$query = "UPDATE pindai_ref_industry SET name='".$name."' WHERE id = '".$id."' LIMIT 1";
-    	$exec = $this->query($query,0,2);	
+    	$exec = $this->query($query,0);	
     	if($exec) return 1; else pr('query gagal');
     }
 
     function deleteindustry($id)
     {
     	$query = "UPDATE pindai_ref_industry SET n_status='2' WHERE id = '".$id."'";
-    	$exec = $this->query($query,0,2);	
+    	$exec = $this->query($query,0);	
     	if($exec) return 1; else pr('query gagal');
 	}
 
@@ -477,31 +489,138 @@ class contentHelper extends Database {
 		return $result;
 	}
 
-	function inputcompany($name,$id_industry,$template,$color,$email,$logo,$description)
+	function inputcompany($name,$id_industry,$template,$color,$email,$logo,$data,$description)
     {
     	$date = date("Y-m-d H:i:s");
     	$query = "INSERT INTO pindai_ref_company (
     											name,
-    											id_industry,
+    											industry_id,
     											template,
     											color,
     											email,
     											logo,
+    											data,
     											description,
-    											create_date
-    											update_date) 
+    											create_date) 
 										VALUES ('".$name."',
 												'".$id_industry."',
 												'".$template."',
 												'".$color."',
 												'".$email."',
 												'".$logo."',
+												'".$data."',
 												'".$description."',
 												'{$date}')";
     	$exec = $this->query($query);	
 		if($exec) return 1; else pr('query gagal');
     }
 
+    function selectcompany($id)
+    {
+    	$query = "SELECT * FROM pindai_ref_company WHERE id ='".$id."'";
+		$result = $this->fetch($query,0,0);
+		return $result;
+    }
+
+    function updatecompany($id,$name,$id_industry,$template,$color,$email,$logo,$data,$description)
+    {
+	   	$date = date("Y-m-d H:i:s");
+	   	$query = "UPDATE pindai_ref_company SET 
+	   											name='".$name."',
+    											industry_id='".$id_industry."',
+    											template='".$template."',
+    											color='".$color."',
+    											email='".$email."',
+    											logo='".$logo."',
+    											data='".$data."',
+    											description='".$description."',    											
+	   										WHERE id = '".$id."' LIMIT 1";
+    	$exec = $this->query($query,0);	
+    	if($exec) return 1; else pr('query gagal');
+    }
+
+    function deletecompany($id)
+    {
+    	$query = "UPDATE pindai_ref_company SET n_status='2' WHERE id = '".$id."'";
+    	$exec = $this->query($query,0);	
+    	if($exec) return 1; else pr('query gagal');
+	}
+
+    //User
+    function getuser()
+    {
+        $query = "SELECT * FROM ck_user_member WHERE n_status = 1";
+
+        $result = $this->fetch($query,1); 
+        return $result;
+    }
+
+    function inputuser($name,$username,$password,$email,$hp,$hak_akses,$n_status,$institusi,$alamat,$image,$salt)
+    {
+        $date = date("Y-m-d H:i:s");
+        $query = "INSERT INTO ck_user_member (
+                                                name,
+                                                username,
+                                                password,
+                                                email,
+                                                hp,
+                                                hak_akses,
+                                                n_status,
+                                                institusi,
+                                                alamat,
+                                                image,
+                                                salt,
+                                                register_date) 
+                                        VALUES ('".$name."',
+                                                '".$username."',
+                                                '".$password."',
+                                                '".$email."',
+                                                '".$hp."',
+                                                '".$hak_akses."',
+                                                '".$n_status."',
+                                                '".$institusi."',
+                                                '".$alamat."',
+                                                '".$image."',
+                                                '".$salt."',
+                                                '{$date}')";
+        $exec = $this->query($query);   
+        if($exec) return 1; else pr('query gagal');
+    }
+
+    function selectuser($id)
+    {
+        $query = "SELECT * FROM ck_user_member WHERE id ='".$id."'";
+        $result = $this->fetch($query,0,0);
+        return $result;
+    }
+
+    function updateuser($id,$name,$username,$password,$email,$hp,$hak_akses,$n_status,$institusi,$alamat,$image,$salt)
+    {
+        $date = date("Y-m-d H:i:s");
+        $query = "UPDATE ck_user_member SET 
+                                                name='".$name."',
+                                                username='".$username."',
+                                                password='".$password."',
+                                                email='".$email."',
+                                                hp='".$hp."',
+                                                hak_akses='".$hak_akses."',
+                                                n_status='".$n_status."',
+                                                institusi='".$institusi."',
+                                                alamat='".$alamat."',
+                                                image='".$image."',
+                                                salt='".$salt."'
+                                            WHERE id = '".$id."' LIMIT 1";
+        //pr($query);
+        $exec = $this->query($query,0); 
+        if($exec) return 1; else pr('query gagal');
+    }
+
+     function deleteuser($id)
+    {
+        $query = "UPDATE ck_user_member SET n_status='2' WHERE id = '".$id."'";
+        $exec = $this->query($query,0); 
+        if($exec) return 1; else pr('query gagal');
+    }
 
 
 }

@@ -78,6 +78,7 @@ class industry extends Controller {
 
 		global $CONFIG;
 			$id = $_GET ['id'];
+			//pr ($_POST);
 
 			if ($_POST == null){
 				$data = $this->contentHelper-> selectindustry($id);
@@ -114,6 +115,29 @@ class industry extends Controller {
 				echo "<script>alert('Data berhasil di hapus');window.location.href='".$CONFIG['admin']['base_url']."industry'</script>";
 			}
 			else {pr('gagal');}
+	}
+
+	public function pdf(){
+
+		$result=$this->contentHelper->getindustry();
+		$header=$this->contentHelper->getindustrycolumn();
+
+		require('fpdf/fpdf.php');
+		$pdf = new FPDF();
+		$pdf->AddPage();
+		$pdf->SetFont('Arial','B',12);		
+		foreach($header as $heading) {
+			foreach($heading as $column_heading)
+				$pdf->Cell(90,12,$column_heading,1);
+		}
+		foreach($result as $row) {
+			$pdf->SetFont('Arial','',12);	
+			$pdf->Ln();
+			foreach($row as $column)
+				$pdf->Cell(90,12,$column,1);
+		}
+		$pdf->Output();
+
 	}
 
 

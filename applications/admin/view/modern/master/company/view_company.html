@@ -46,7 +46,12 @@
 		</ul>
 
 		<div class="tab-content">
-		<form class="form-horizontal" action="{$basedomain}company/input" method="post">
+			<div class="panel">
+			<div class="panel-heading">
+				<h3 class="panel-title"><i>Field Company</i></h3>
+			</div>
+								
+		<form class="form-horizontal" action="{$basedomain}company" method="post">
 		<div class="row form-horizontal">
 
 			<div class="col-md-12">
@@ -54,7 +59,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Nama</label>
 					<div class="col-sm-8">
-							<input name="name" type="text" class="form-control" placeholder="Nama">
+							<label class="col-sm-4 control-label" for="">{$data.name}</label>
 					</div>
 				</div>
 			</div>
@@ -67,18 +72,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Industry</label>
 					<div class="col-sm-8">
-						<select name ="id_industry" class="selectpicker">						
-							<option>--Pilih Industry--</option>
-							
-							{if !empty($data_industry)}
-							{foreach $data_industry as $key=> $value}
-
-								<option value="{$value.id}">{$value.name}</option>
-							
-							{/foreach}
-							{/if}
-
-						</select>
+						<label class="col-sm-4 control-label" for="">{$data.industry_id}</label>
 					</div>
 				</div>
 			</div>
@@ -92,18 +86,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Template</label>
 					<div class="col-sm-8">
-						<select name = "template" class="selectpicker">
-							<option>--Pilih Template--</option>
-
-							{if !empty($data_template)}
-							{foreach $data_template as $key=> $value}
-
-							<option value="{$value.name}">{$value.name}</option>
-
-							{/foreach}
-							{/if}
-
-						</select>
+						<label class="col-sm-4 control-label" for="">{$data.template}</label>
 					</div>
 				</div>
 			</div>
@@ -116,7 +99,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Bg Color</label>
 					<div class="col-sm-8">
-							<input name="bg_color" type="color" class="form-control" placeholder="Bg Color">
+						<label class="col-sm-4 control-label" for="">{$data.color.bg_color}</label>
 					</div>
 				</div>
 			</div>
@@ -129,7 +112,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Header Color</label>
 					<div class="col-sm-8">
-							<input name="header_color" type="color" class="form-control" placeholder="Header Color">
+							<label class="col-sm-4 control-label" for="">{$data.color.header_color}</label>
 					</div>
 				</div>
 			</div>
@@ -142,7 +125,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Stack Color</label>
 					<div class="col-sm-8">
-							<input name="stack_color" type="color" class="form-control" placeholder="Stack Color">
+							<label class="col-sm-4 control-label" for="">{$data.color.stack_color}</label>
 					</div>
 				</div>
 			</div>
@@ -156,7 +139,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Font Color Menu</label>
 					<div class="col-sm-8">
-							<input name="menu_color" type="color" class="form-control" placeholder="Font Color Menu">
+							<label class="col-sm-4 control-label" for="">{$data.color.menu_color}</label>
 					</div>
 				</div>
 			</div>
@@ -169,7 +152,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Font Color Menu Selected</label>
 					<div class="col-sm-8">
-							<input name="menu_sel_color" type="color" class="form-control" placeholder="Font Color Menu Selected">
+							<label class="col-sm-4 control-label" for="">{$data.color.menu_sel_color}</label>
 					</div>
 				</div>
 			</div>
@@ -183,7 +166,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Email</label>
 					<div class="col-sm-8">
-							<input name="email" type="text" class="form-control" placeholder="Email">
+							<label class="col-sm-4 control-label" for="">{$data.email}</label>
 					</div>
 				</div>
 			</div>
@@ -417,10 +400,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Login Page</label>
 					<div class="col-sm-8">
-						<select name="login_page" class="selectpicker">
-							<option value="default" >Default</option>
-							<option value="full image" >Full Image</option>
-						</select>
+						<label class="col-sm-4 control-label" for="">{$data.file.login_page}</label>
 					</div>
 				</div>
 			</div>
@@ -433,9 +413,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Logo</label>
 					<div class="col-sm-8">
-						<span class="pull-left btn btn-default btn-file ">
-							Browse File Logo... <input name="logo" type="file" >
-						</span>
+						<label class="col-sm-4 control-label" for="">{$data.logo}</label>
 					</div>
 				</div>
 			</div>
@@ -449,9 +427,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Login</label>
 					<div class="col-sm-8">
-						<span class="pull-left btn btn-default btn-file ">
-							Browse File Login... <input name="login" type="file" >
-						</span>
+						<label class="col-sm-4 control-label" for="">{$data.file.login}</label>
 					</div>
 				</div>
 			</div>
@@ -465,9 +441,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Logo PDF</label>
 					<div class="col-sm-8">
-						<span class="pull-left btn btn-default btn-file ">
-							Browse File Logo PDF... <input name="logo_pdf" type="file" >
-						</span>
+						<label class="col-sm-4 control-label" for="">{$data.file.logo_pdf}</label>
 					</div>
 				</div>
 			</div>
@@ -481,7 +455,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Description</label>
 					<div class="col-sm-8">
-						<textarea name="description" class="form-control"></textarea>
+						<label class="col-sm-4 control-label" for="">{$data.description}</label>
 					</div>
 				</div>
 			</div>
@@ -492,9 +466,7 @@
 
 
 		<div class="panel-footer text-left mar-btm">
-			<button type="submit" class="btn btn-info">Create</button>
-
-			<button type="reset" class="btn btn-default">Cancel</button>
+			<button type="submit" class="btn btn-info">back</button>		
 		</div>
 	</div>
 	</form>
