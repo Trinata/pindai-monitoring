@@ -24,8 +24,8 @@ class summaryArea extends Controller {
 		// $this->contentHelper = $this->loadModel('contentHelper');
 	}
 	
-	public function index(){
-		
+	public function index($tes=11){
+		pr($tes);
 
 		return $this->loadView($this->folder."summaryArea");
 
