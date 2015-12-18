@@ -38,7 +38,7 @@
 				<a href="{$basedomain}company">Daftar Data</a>
 			</li>
 			<li  class="active">
-				<a href="{$basedomain}company/create">Buat Data</a>
+				<a href="{$basedomain}company/create">Add Data</a>
 			</li>
 			<li>
 				<a href="{$basedomain}company/search">Cari Data</a>
@@ -201,20 +201,20 @@
 							<!-- Checkboxes -->
 							<div class="checkbox">
 								<label class="form-checkbox form-normal form-primary form-text">
-								<input name="info_field" type="checkbox" value="judul"> Judul</label>
+								<input name="info_field[]" type="checkbox" value="judul"> Judul</label>
 							</div>
 							<div class="checkbox">
 								<label class="form-checkbox form-normal form-primary form-text">
-								<input name="info_field" type="checkbox" value="wartawan"> Wartawan</label>
+								<input name="info_field[]" type="checkbox" value="wartawan"> Wartawan</label>
 							</div>
 							<div class="checkbox">
 								<label class="form-checkbox form-normal form-primary form-text">
-								<input name="info_field" type="checkbox" value="topik"> Topik</label>
+								<input name="info_field[]" type="checkbox" value="topik"> Topik</label>
 							</div>
 
 							<div class="checkbox">
 								<label class="form-checkbox form-normal form-primary form-text">
-								<input name="info_field" type="checkbox" value="judul youtube"> Judul Youtube</label>
+								<input name="info_field[]" type="checkbox" value="judul youtube"> Judul Youtube</label>
 							</div>
 
 						</div>
@@ -223,20 +223,20 @@
 							<!-- Checkboxes -->
 							<div class="checkbox">
 								<label class="form-checkbox form-normal form-primary form-text">
-								<input name="info_field" type="checkbox" value="tanggal"> Tanggal</label>
+								<input name="info_field[]" type="checkbox" value="tanggal"> Tanggal</label>
 							</div>
 							<div class="checkbox">
 								<label class="form-checkbox form-normal form-primary form-text">
-								<input name="info_field" type="checkbox" value="muatan berita"> Muatan Berita</label>
+								<input name="info_field[]" type="checkbox" value="muatan berita"> Muatan Berita</label>
 							</div>
 							<div class="checkbox">
 								<label class="form-checkbox form-normal form-primary form-text">
-								<input name="info_field" type="checkbox" value="nilai iklan"> Nilai Iklan</label>
+								<input name="info_field[]" type="checkbox" value="nilai iklan"> Nilai Iklan</label>
 							</div>
 
 							<div class="checkbox">
 								<label class="form-checkbox form-normal form-primary form-text">
-								<input name="info_field" type="checkbox" value="durasi youtube"> Durasi Youtube</label>
+								<input name="info_field[]" type="checkbox" value="durasi youtube"> Durasi Youtube</label>
 							</div>
 
 						</div>
@@ -245,13 +245,16 @@
 
 							<!-- Checkboxes -->
 							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Media</label>
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="info_field[]" value="media"> Media</label>
 							</div>
 							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Narasumber</label>
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="info_field[]" value="narasumber"> Narasumber</label>
 							</div>
 							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Penanggungjawab</label>
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="info_field[]" value="penanggung jawab"> Penanggungjawab</label>
 							</div>
 
 						</div>
@@ -259,13 +262,16 @@
 
 							<!-- Checkboxes -->
 							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Halaman</label>
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="info_field[]" value="halaman"> Halaman</label>
 							</div>
 							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Rubric</label>
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="info_field[]" value="rubric" > Rubric</label>
 							</div>
 							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Edisi</label>
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="info_field[]" value="edisi"> Edisi</label>
 							</div>
 
 						</div>
@@ -284,40 +290,16 @@
 
 							<!-- Checkboxes -->
 							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Internet</label>
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="search_field[]" value="internet" > Internet</label>
 							</div>
 							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Tabloid</label>
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="search_field[]" value="tabloid"> Tabloid</label>
 							</div>
 							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Social Media</label>
-							</div>
-
-						</div>
-						<div class="col-md-3  ">
-
-							<!-- Checkboxes -->
-							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Majalah</label>
-							</div>
-							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Televisi</label>
-							</div>
-							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Call Center</label>
-							</div>
-
-
-						</div>
-
-						<div class="col-md-3  ">
-
-							<!-- Checkboxes -->
-							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Koran Nasional</label>
-							</div>
-							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Radio</label>
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="search_field[]" value="sosial media"> Social Media</label>
 							</div>
 
 						</div>
@@ -325,10 +307,44 @@
 
 							<!-- Checkboxes -->
 							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Koran Regional</label>
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="search_field[]" value="majalah"> Majalah</label>
 							</div>
 							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Koran Asing</label>
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="search_field[]" value="televisi"> Televisi</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="search_field[]" value="call center"> Call Center</label>
+							</div>
+
+
+						</div>
+
+						<div class="col-md-3  ">
+
+							<!-- Checkboxes -->
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="search_field[]" value="koran nasional"> Koran Nasional</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="search_field[]" value="radio"> Radio</label>
+							</div>
+
+						</div>
+						<div class="col-md-3  ">
+
+							<!-- Checkboxes -->
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="search_field[]" value="koran regional"> Koran Regional</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="search_field[]" value="koran asing"> Koran Asing</label>
 							</div>
 
 						</div>
@@ -348,43 +364,16 @@
 
 							<!-- Checkboxes -->
 							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Mindshare</label>
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="menu_statistic[]" value="mindshare"> Mindshare</label>
 							</div>
 							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Tone</label>
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="menu_statistic[]" value="tone"> Tone</label>
 							</div>
 							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Rubric</label>
-							</div>
-
-						</div>
-						<div class="col-md-3  ">
-
-							<!-- Checkboxes -->
-							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Media Category</label>
-							</div>
-							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Topik</label>
-							</div>
-							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Media</label>
-							</div>
-
-
-						</div>
-
-						<div class="col-md-3  ">
-
-							<!-- Checkboxes -->
-							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> PR Value</label>
-							</div>
-							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Source</label>
-							</div>
-							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Journalist</label>
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="menu_statistic[]" value="rubric"> Rubric</label>
 							</div>
 
 						</div>
@@ -392,13 +381,52 @@
 
 							<!-- Checkboxes -->
 							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Mention Percentage</label>
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="menu_statistic[]" value="media category"> Media Category</label>
 							</div>
 							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> TV Program</label>
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="menu_statistic[]" value="topik"> Topik</label>
 							</div>
 							<div class="checkbox">
-								<label class="form-checkbox form-normal form-primary form-text"><input type="checkbox"> Quotes</label>
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="menu_statistic[]" value="media"> Media</label>
+							</div>
+
+
+						</div>
+
+						<div class="col-md-3  ">
+
+							<!-- Checkboxes -->
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="menu_statistic[]" value="pr value"> PR Value</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="menu_statistic[]" value="source"> Source</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="menu_statistic[]" value="journalist"> Journalist</label>
+							</div>
+
+						</div>
+						<div class="col-md-3  ">
+
+							<!-- Checkboxes -->
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="menu_statistic[]" value="mention percentage"> Mention Percentage</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="menu_statistic[]" value="tv program"> TV Program</label>
+							</div>
+							<div class="checkbox">
+								<label class="form-checkbox form-normal form-primary form-text">
+								<input type="checkbox" name="menu_statistic[]" value="quotes"> Quotes</label>
 							</div>
 
 						</div>

@@ -533,8 +533,9 @@ class contentHelper extends Database {
     											email='".$email."',
     											logo='".$logo."',
     											data='".$data."',
-    											description='".$description."',    											
+    											description='".$description."'
 	   										WHERE id = '".$id."' LIMIT 1";
+        pr($query);
     	$exec = $this->query($query,0);	
     	if($exec) return 1; else pr('query gagal');
     }
@@ -545,6 +546,13 @@ class contentHelper extends Database {
     	$exec = $this->query($query,0);	
     	if($exec) return 1; else pr('query gagal');
 	}
+
+    function search($name)
+    {        
+        $query = "SELECT * FROM pindai_ref_company WHERE name ='".$name."'";
+        $result = $this->fetch($query,0,0);
+        return $result;
+    }
 
     //User
     function getuser()
