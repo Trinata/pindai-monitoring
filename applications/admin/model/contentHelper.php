@@ -101,7 +101,8 @@ class contentHelper extends Database {
     //Media
     function getmedia()
 	{
-		$query = "SELECT * FROM pindai_ref_media WHERE n_status = 1";
+		$query = "SELECT rm.*, m.name AS nama_media FROM pindai_ref_media AS rm LEFT JOIN pindai_ref_media_category AS m ON 
+                    rm.media_category = m.id WHERE rm.n_status = 1";
 		$result = $this->fetch($query,1); 
 		return $result;
 	}
@@ -123,8 +124,10 @@ class contentHelper extends Database {
 
     function selectmedia($id)
     {
-    	$query = "SELECT * FROM pindai_ref_media WHERE id ='".$id."'";
-		$result = $this->fetch($query,0,0);
+        $query = "SELECT rm.*, m.name AS nama_media FROM pindai_ref_media AS rm LEFT JOIN pindai_ref_media_category AS m ON 
+                    rm.media_category = m.id WHERE rm.id ='".$id."'";
+    	// $query = "SELECT * FROM pindai_ref_media WHERE id ='".$id."'";
+		$result = $this->fetch($query,1);
 		return $result;
     }
 

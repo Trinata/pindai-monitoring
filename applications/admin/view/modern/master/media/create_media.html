@@ -78,6 +78,11 @@
 														<div class="col-sm-4">
 															<select name="media_category" class="selectpicker" required>
 																<option>--Pilih Cat Media--</option>
+																{if !empty($datacatmedia)}
+																{foreach $datacatmedia as $key=> $value}
+																<option value=value="{$value.id}">{$value.name}</option>
+																{/foreach}
+																{/if}
 															</select>
 														</div>
 													</div>

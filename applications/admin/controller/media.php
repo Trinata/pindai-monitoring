@@ -27,12 +27,7 @@ class media extends Controller {
 		global $basedomain, $app_domain;
 
 		$datamedia=$this->contentHelper->getmedia();
-		$datacatmedia=$this->contentHelper->getcatmedia();
-
-		if ($datacatmedia){	
-			$this->view->assign('datacatmedia',$datacatmedia);
-		}
-
+		
 		// pr($datamedia);
 		if ($datamedia){	
 			foreach ($datamedia as $key => $value) {
@@ -56,7 +51,13 @@ class media extends Controller {
 	public function create()
 	{
 		// ambil data cat media
-		
+		$datacatmedia=$this->contentHelper->getcatmedia();
+
+		// pr($datacatmedia);
+		if ($datacatmedia){	
+			$this->view->assign('datacatmedia',$datacatmedia);
+		}
+
 		return $this->loadView($this->folder."create_media");
 
 	}
@@ -84,17 +85,23 @@ class media extends Controller {
 			$id = $_GET ['id'];
 
 			$datamedia=$this->contentHelper->selectmedia($id);
-			// pr($datamedia); 
+			
+			pr($datamedia); 
 
-			if($datamedia){
-				if 	($datamedia['data']){
-					$datamedia['color'] = unserialize($datamedia['data']);
-					$datamedia['advprice'] = unserialize($datamedia['data']);
+			if ($datamedia){	
+				foreach ($datamedia as $key => $value) {
+					// pr(unserialize($value['data']));
+					if ($value['data']) {
+						$unserial = unserialize($value['data']);
+						$datamedia[$key]['color'] = $unserial['color'];
+						$datamedia[$key]['advprice'] = $unserial['advprice'];
+					}
+
+					pr($datamedia);
 				}
-				
-				pr($datamedia);
-				$this->view->assign('datamedia',$datamedia);
-			}	
+
+				$this->view->assign('datamedia',$datamedia[0]);
+			}
 
 			return $this->loadView($this->folder."view_media");
 	}
@@ -106,6 +113,13 @@ class media extends Controller {
 
 			if ($_POST == null){
 				$datamedia=$this->contentHelper->selectmedia($id);
+				$datacatmedia=$this->contentHelper->getcatmedia();
+
+				// pr($datacatmedia);
+				if ($datacatmedia){	
+					$this->view->assign('datacatmedia',$datacatmedia);
+				}
+
 				// pr ($datamedia); 
 				
 				if($datamedia){
@@ -126,6 +140,7 @@ class media extends Controller {
 				$media_category =$_POST['media_category'];
 				$pic = $_POST['pic'];
 
+				// pr($_POST);exit;
 				$data = serialize(array('color'=>$_POST['datacol'], 'advprice'=>$_POST['dataadv']));
 				
 				$update = $this->contentHelper->updatemedia($id,$name,$media_category,$pic,$data);

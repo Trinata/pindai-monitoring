@@ -85,7 +85,7 @@
 															<label class="col-sm-3 control-label" for="">Color :</label>
 															<div class="col-sm-8">
 
-																	<label class="col-sm-3 control-label" for="">{$datamedia.color.color}</label>
+																	<label class="col-sm-3 control-label" for="">{$datamedia.color}</label>
 															</div>
 														</div>
 														<div class="form-group">
@@ -99,7 +99,7 @@
 															<label class="col-sm-3 control-label" for="">Adv Price :</label>
 															<div class="col-sm-8">
 
-																	<label class="col-sm-3 control-label" for="">{money_format("Rp %.2n",$datamedia.advprice.advprice)}</label>
+																	<label class="col-sm-3 control-label" for="">Rp {$datamedia.advprice|number_format}.00</label>
 															</div>
 														</div>
 													</div>
