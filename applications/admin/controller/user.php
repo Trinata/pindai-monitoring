@@ -37,7 +37,16 @@ class user extends Controller {
 
 	}
 
+	public function search(){
+
+		$data = $this->contentHelper->getuser();
+
+		if ($data) {
+			$this->view->assign('data',$data);
+		}
 	
+		return $this->loadView($this->folder."search_user");
+	}
 	public function create()
 	{
 		//buat combobox perusahaan
