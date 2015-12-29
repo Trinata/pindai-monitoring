@@ -44,9 +44,6 @@
 									<li  class="active">
 										<a href="{$basedomain}summaryArea/create">Add Data</a>
 									</li>
-									<li>
-										<a href="{$basedomain}summaryArea/search">Cari Data</a>
-									</li>
 								</ul>
 
 								<div class="tab-content">
@@ -75,10 +72,17 @@
 													<label class="col-sm-4 control-label" for="">News date</label>
 													<div class="col-sm-8">
 														
-													<div class="input-group date">
+														<div class="input-group date">
 															<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-															<input type="text" class="form-control" placeholder="--News Date--">
+															<input type="text" id="demo-tp-com" class="form-control" placeholder="--News Date--">
 														</div>
+														<div id="demo-dp-component">
+													<div class="input-group date">
+														<input type="text" class="form-control">
+														<span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span>
+													</div>
+													<small class="text-muted">Auto close on select</small>
+												</div>
 													</div>
 												</div>
 											</div>
@@ -97,6 +101,7 @@
 									<div class="panel-heading">
 										<h3 class="panel-title">Form Summary</h3>
 									</div>
+									<form method="POST" action="{$basedomain}summaryArea/input">
 									<div class="panel-body">
 
 										<div class="row form-horizontal">
@@ -106,7 +111,7 @@
 													<div class="col-sm-4">
 														<div class="input-group date">
 															<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-															<input type="text" class="form-control" placeholder="--Summary Date--">
+															<input type="text" class="form-control" name="date_smry" placeholder="--Summary Date--">
 														</div>
 													</div>
 												</div>
@@ -117,7 +122,7 @@
 												<div class="form-group">
 													<label class="col-sm-3 control-label" for="">Topik/Summary title</label>
 													<div class="col-sm-9">
-													<input type="text" class="form-control" placeholder="Topik/Summary title">
+													<input type="text" class="form-control" name="topik" placeholder="Topik/Summary title">
 													</div>
 												</div>
 											</div>
@@ -127,7 +132,7 @@
 												<div class="form-group">
 													<label class="col-sm-3 control-label" for="">Summary Detail</label>
 													<div class="col-sm-9">
-													<textarea class="form-control" placeholder="Summary Detail">
+													<textarea class="form-control" name="detail" placeholder="Summary Detail">
 													</textarea>
 													</div>
 												</div>
@@ -139,7 +144,7 @@
 													<label class="col-sm-3 control-label" for="">Tone</label>
 													<div class="col-sm-9">
 														
-														<select class="selectpicker">
+														<select class="selectpicker" name="tone">
 															<option>--Pilih Tone--</option>
 														</select>
 													</div>
@@ -153,7 +158,7 @@
 													<label class="col-sm-3 control-label" for="">Publish</label>
 													<div class="col-sm-9">
 														
-														<select class="selectpicker">
+														<select class="selectpicker" name="status">
 															<option>Draft</option>
 														</select>
 													</div>
@@ -163,13 +168,14 @@
 
 									</div>
 									
-								</div>
-								</div>
 									<div class="panel-footer text-left mar-btm">
-										<button type="submit" class="btn btn-info">Simpan</button>
+										<input type="submit" class="btn btn-info" value="Submit">
 
 										<button type="reset" class="btn btn-default">Batal</button>
 									</div>
+									</form>
+								</div>
+								</div>
 							</div>
 						<!-- </div> -->
 					<!-- </div> -->

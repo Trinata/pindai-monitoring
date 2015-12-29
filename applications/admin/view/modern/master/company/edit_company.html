@@ -40,9 +40,6 @@
 			<li  class="active">
 				<a href="{$basedomain}company/create">Add Data</a>
 			</li>
-			<li>
-				<a href="{$basedomain}company/search">Cari Data</a>
-			</li>
 		</ul>
 
 		<div class="tab-content">
@@ -116,7 +113,15 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Bg Color</label>
 					<div class="col-sm-8">
-							<input name="bg_color" type="color" class="form-control" placeholder="Bg Color" value="{$data.color.bg_color}">
+						<div class="input-group">
+							<input name="bg_color" type="text" id="selected-color1" class="form-control" placeholder="Bg Color" value="{$data.color.bg_color}">
+							<span class="input-group-addon">
+							  <a class="dropdown-toggle" data-toggle="dropdown">Choose Color</a>
+							  <ul class="dropdown-menu">
+							    <li><div id="colorpalette1"></div></li>
+							  </ul>
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -129,7 +134,15 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Header Color</label>
 					<div class="col-sm-8">
-							<input name="header_color" type="color" class="form-control" placeholder="Header Color" value="{$data.color.header_color}">
+						<div class="input-group">
+							<input name="header_color" type="text" id="selected-color2" class="form-control" placeholder="Header Color"  value="{$data.color.header_color}">
+							<span class="input-group-addon">
+							  <a class="dropdown-toggle" data-toggle="dropdown">Choose Color</a>
+							  <ul class="dropdown-menu">
+							    <li><div id="colorpalette2"></div></li>
+							  </ul>
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -142,7 +155,15 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Stack Color</label>
 					<div class="col-sm-8">
-							<input name="stack_color" type="color" class="form-control" placeholder="Stack Color" value="{$data.color.stack_color}">
+						<div class="input-group">
+							<input name="stack_color" type="text" id="selected-color3" class="form-control" placeholder="Stack Color"  value="{$data.color.stack_color}">
+							<span class="input-group-addon">
+							  <a class="dropdown-toggle" data-toggle="dropdown">Choose Color</a>
+							  <ul class="dropdown-menu">
+							    <li><div id="colorpalette3"></div></li>
+							  </ul>
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -156,7 +177,15 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Font Color Menu</label>
 					<div class="col-sm-8">
-							<input name="menu_color" type="color" class="form-control" placeholder="Font Color Menu" value="{$data.color.menu_color}">
+						<div class="input-group">
+							<input name="menu_color" type="text" id="selected-color4" class="form-control" placeholder="Font Color Menu"  value="{$data.color.menu_color}">
+							<span class="input-group-addon">
+							  <a class="dropdown-toggle" data-toggle="dropdown">Choose Color</a>
+							  <ul class="dropdown-menu">
+							    <li><div id="colorpalette4"></div></li>
+							  </ul>
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -169,7 +198,15 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Font Color Menu Selected</label>
 					<div class="col-sm-8">
-							<input name="menu_sel_color" type="color" class="form-control" placeholder="Font Color Menu Selected" value="{$data.color.menu_sel_color}">
+						<div class="input-group">
+							<input name="menu_sel_color" type="text" id="selected-color5" class="form-control" placeholder="Font Color Menu Selected"  value="{$data.color.menu_sel_color}">
+							<span class="input-group-addon">
+							  <a class="dropdown-toggle" data-toggle="dropdown">Choose Color</a>
+							  <ul class="dropdown-menu">
+							    <li><div id="colorpalette5"></div></li>
+							  </ul>
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>

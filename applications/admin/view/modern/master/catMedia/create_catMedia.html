@@ -44,9 +44,6 @@
 									<li  class="active">
 										<a href="{$basedomain}catMedia/create">Buat Data</a>
 									</li>
-									<li>
-										<a href="{$basedomain}catMedia/search">Cari Data</a>
-									</li>
 								</ul>
 
 								<div class="tab-content">
@@ -74,20 +71,18 @@
 											<div class="row form-horizontal">
 												<div class="col-md-8">
 													<div class="form-group">
-														<label class="col-sm-3 control-label" for="">Color *</label>
-														<div class="col-sm-9">
-														<input type="color" class="form-control">
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="row form-horizontal">
-												<div class="col-md-8">
-													<div class="form-group">
 														<label class="col-sm-3 control-label" for="">Color Code *</label>
 														<div class="col-sm-4">
 															
-																<input name="data" type="text" class="form-control" placeholder="Code" required>
+																<div class="input-group">
+																	<input name="data" type="text" id="selected-color1" class="form-control" placeholder="Color">
+																	<span class="input-group-addon">
+																	  <a class="dropdown-toggle" data-toggle="dropdown">Choose Color</a>
+																	  <ul class="dropdown-menu">
+																	    <li><div id="colorpalette1"></div></li>
+																	  </ul>
+																	</span>
+																</div>
 														</div>
 													</div>
 												</div>
@@ -126,3 +121,9 @@
 <!--End page content-->
 
 
+<script>
+  $('#colorpalette1').colorPalette()
+          .on('selectColor', function(e) {
+            $('#selected-color1').val(e.color);
+          });
+</script>
