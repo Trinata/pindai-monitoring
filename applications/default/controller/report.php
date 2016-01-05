@@ -1,6 +1,6 @@
 <?php
 
-class user extends Controller {
+class report extends Controller {
 	
 	var $models = FALSE;
 	var $view;
@@ -21,12 +21,7 @@ class user extends Controller {
 	
 	function index(){
 		
-    	return $this->loadView(CODEKIR_TEMPLATE . '/user/login');
-    }
-
-    function profile()
-    {
-    	return $this->loadView(CODEKIR_TEMPLATE . '/user/profile');
+    	return $this->loadView(CODEKIR_TEMPLATE . '/report/index');
     }
 	
 }

@@ -1,5 +1,8 @@
 {include file="theme/pindai/master_template/meta.html"}
+{if $page.page neq 'login'}
 {include file="theme/pindai/master_template/header.html"}
+{/if}
 {$content}
+{if $page.page neq 'login'}
 {include file="theme/pindai/master_template/footer.html"}
-	
+{/if}

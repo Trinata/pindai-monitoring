@@ -1,44 +1,22 @@
-<!-- PAGE TOP -->
-<section class="page-title">
-	<div class="container">
-
-		<header>
-
-			<ul class="breadcrumb"><!-- breadcrumb -->
-				<li><a href="#">Pages</a></li>
-				<li class="active">Login Page</li>
-			</ul><!-- /breadcrumb -->
-
-			<h2><!-- Page Title -->
-				Login
-			</h2><!-- /Page Title -->
-
-		</header>
-
-	</div>			
-</section>
-<!-- /PAGE TOP -->
-
-
 <!-- CONTENT -->
-<section>
+<section class="bg-img img-balloon">
 	<div class="container">
 
 		<div class="row">
 		
 			<!-- LOGIN -->
-			<div class="col-md-6 col-sm-6">
+			<div class="col-md-offset-3 col-md-6 col-sm-3">
 
 				<!-- login form -->
-				<form action="#" method="post" class="sky-form boxed">
+				<form action="{$basedomain}home" method="post" class="sky-form boxed" style="background-color:#fff;opacity:0.95">
 					<header>Sign in</header>
 					
 					<fieldset>
 
 						<section>
 							<label class="input">
-								<i class="icon-append fa fa-envelope"></i>
-								<input required type="email" placeholder="Email address">
+								<i class="icon-append fa fa-user"></i>
+								<input required type="text" placeholder="Username">
 								<b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
 							</label>
 						</section>
@@ -49,7 +27,6 @@
 								<input required type="password" placeholder="Password">
 								<b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
 							</label>
-							<div class="note"><a href="#">Forgot Password?</a></div>
 						</section>
 						
 						<section>
@@ -58,73 +35,17 @@
 
 					</fieldset>
 					<footer>
-						<button type="submit" class="button">Log in</button>
+						<div class="sky-form">
+							<button type="submit" class="button nomargin pull-left">Log In</button>
+							<button type="reset" class="button nomargin pull-left button-secondary">Reset</button>
+						</div>
+
 					</footer>
 				</form>
 				<!-- /login form -->
 
 			</div>
 			<!-- /LOGIN -->
-
-			<!-- REGISTER -->
-			<div class="col-md-6 col-sm-6">
-
-				<!-- registration form -->
-				<form action="#" method="post" class="sky-form boxed">
-					<header>Register an account</header>
-					
-					<fieldset>								
-						<section>
-							<label class="input">
-								<i class="icon-append fa fa-envelope"></i>
-								<input required type="email" placeholder="Email address">
-								<b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
-							</label>
-						</section>
-						
-						<section>
-							<label class="input">
-								<i class="icon-append fa fa-lock"></i>
-								<input required type="password" placeholder="Password">
-								<b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
-							</label>
-						</section>
-						
-						<section>
-							<label class="input">
-								<i class="icon-append fa fa-lock"></i>
-								<input required type="password" placeholder="Confirm password">
-								<b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
-							</label>
-						</section>
-					</fieldset>
-						
-					<fieldset>
-						<div class="row">
-							<section class="col col-md-6">
-								<label class="input">
-									<input required type="text" placeholder="First name">
-								</label>
-							</section>
-							<section class="col col-md-6">
-								<label class="input">
-									<input required type="text" placeholder="Last name">
-								</label>
-							</section>
-						</div>
-						
-						<section>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>I agree to the Terms of Service</label>
-						</section>
-					</fieldset>
-					<footer>
-						<button type="submit" class="button">Submit</button>
-					</footer>
-				</form>
-				<!-- /registration form -->
-
-			</div>
-			<!-- /REGISTER -->
 
 		</div>
 

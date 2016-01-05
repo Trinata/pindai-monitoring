@@ -1,4 +1,4 @@
-<div id="header" class="sticky"> <!-- class="sticky" for sticky menu -->
+<div id="header"> <!-- class="sticky" for sticky menu -->
 
     <!-- Top Bar -->
     <header id="topBar">
@@ -19,8 +19,8 @@
             <div id="barMain">
                 <nav class="nav-second">
                     <ul class="nav nav-pills nav-second">
-                        <li><a href="{$basedomain}user"><i class="fa fa-user"></i> Register</a></li>
-                        <li><a href="{$basedomain}user"><i class="fa fa-sign-in"></i> Login</a></li>
+                        <li><a href="#"><i class="fa fa-user"></i> Welcome, Bayu</a></li>
+                        <li><a href="{$basedomain}logout.php"><i class="fa fa-sign-out"></i> Logout</a></li>
                     </ul>
                 </nav>
             </div>
@@ -66,22 +66,25 @@
                         </li>
                     -->
                     <ul id="topMain" class="nav nav-pills nav-main">
-                        <li class="mega-menu active">
+                        <li class="{if $page.page eq 'home'}active{/if}">
                             <a class="" href="{$basedomain}">
                                 HOME <span>depan</span>
                             </a>
-                        </li>
-                        <li class="">
-                            <a class="" href="#">REPORT <span>cetak</span></a>
-                        </li>
-                        <li class="">
-                            <a class="" href="#">SUMMARY <span>tv</span></a>
                         </li>
                         <li class="">
                             <a class="" href="#">ARCHIEVE <span>arsip</span></a>
                         </li>
                         <li class="">
                             <a class="" href="#">STATISTIC <span>grafik</span></a>
+                        </li>
+                        <li class="">
+                            <a class="" href="#">SUMMARY <span>tv</span></a>
+                        </li>
+                        <li class="{if $page.page eq 'report'}active{/if}">
+                            <a class="" href="{$basedomain}report">REPORT <span>cetak</span></a>
+                        </li>
+                        <li class="{if $page.function eq 'profile'}active{/if}">
+                            <a class="" href="{$basedomain}user/profile">ACCOUNT <span>profile</span></a>
                         </li>
                     </ul>
 

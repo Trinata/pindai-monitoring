@@ -24,7 +24,7 @@ class login extends Controller {
 	
 	function index(){
 
-        return $this->loadView('login');
+        return $this->loadView(CODEKIR_TEMPLATE .'/user/login');
     }
 	
     /**
