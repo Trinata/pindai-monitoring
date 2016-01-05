@@ -42,10 +42,7 @@
 										<a href="{$basedomain}industry">Daftar Data</a>
 									</li>
 									<li  class="active">
-										<a href="{$basedomain}industry/create">Buat Data</a>
-									</li>
-									<li>
-										<a href="{$basedomain}industry/search">Cari Data</a>
+										<a href="{$basedomain}industry/create">Add Data</a>
 									</li>
 								</ul>
 
@@ -55,15 +52,15 @@
 									<div class="panel-heading">
 										<h3 class="panel-title"><i>Field dengan tanda * harus diisi</i></h3>
 									</div>
+									<form class="form-horizontal" action="{$basedomain}industry/input" method="post">
 									<div class="panel-body">
-
 										<div class="row form-horizontal">
 											<div class="col-md-8">
 												<div class="form-group">
 													<label class="col-sm-3 control-label" for="">Nama *</label>
 													<div class="col-sm-8">
 														
-															<input type="text" class="form-control" placeholder="Nama">
+															<input name = "name" type="text" class="form-control" placeholder="Nama">
 													</div>
 												</div>
 											</div>
@@ -72,9 +69,9 @@
 										<button type="submit" class="btn btn-info">Create</button>
 
 										<button type="reset" class="btn btn-default">Cancel</button>
+									</div>									
 									</div>
-
-									</div>
+									</form>
 								</div>
 								</div>
 							</div>

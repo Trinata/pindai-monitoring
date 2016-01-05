@@ -44,9 +44,6 @@
 									<li  class="active">
 										<a href="{$basedomain}media/create">Buat Data</a>
 									</li>
-									<li>
-										<a href="{$basedomain}media/search">Cari Data</a>
-									</li>
 								</ul>
 
 								<div class="tab-content">
@@ -78,6 +75,11 @@
 														<div class="col-sm-4">
 															<select name="media_category" class="selectpicker" required>
 																<option>--Pilih Cat Media--</option>
+																{if !empty($datacatmedia)}
+																{foreach $datacatmedia as $key=> $value}
+																<option value=value="{$value.id}">{$value.name}</option>
+																{/foreach}
+																{/if}
 															</select>
 														</div>
 													</div>
@@ -111,21 +113,17 @@
 											<div class="row form-horizontal">
 												<div class="col-md-8">
 													<div class="form-group">
-														<label class="col-sm-3 control-label" for="">Color</label>
-														<div class="col-sm-4">
-															
-																<input type="color" class="form-control" placeholder="color">
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="row form-horizontal">
-												<div class="col-md-8">
-													<div class="form-group">
 														<label class="col-sm-3 control-label" for="">Color Code *</label>
 														<div class="col-sm-4">
-															
-																<input name="datacol" type="text" class="form-control" placeholder="Code" required>
+															<div class="input-group">
+																	<input name="datacol" type="text" id="selected-color1" class="form-control" placeholder="Color">
+																	<span class="input-group-addon">
+																	  <a class="dropdown-toggle" data-toggle="dropdown">Choose Color</a>
+																	  <ul class="dropdown-menu">
+																	    <li><div id="colorpalette1"></div></li>
+																	  </ul>
+																	</span>
+																</div>
 														</div>
 													</div>
 												</div>
@@ -154,4 +152,10 @@
 <!--===================================================-->
 <!--End page content-->
 
+<script>
+  $('#colorpalette1').colorPalette()
+          .on('selectColor', function(e) {
+            $('#selected-color1').val(e.color);
+          });
+</script>
 

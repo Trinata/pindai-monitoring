@@ -91,6 +91,7 @@
 	<link href="{$basedomain}css/demo/nifty-demo.min.css" rel="stylesheet">
 
 
+  <link rel="stylesheet" type="text/css" media="all" href="{$basedomain}css/bootstrap-colorpalette.css" />
 
 
 	<!--SCRIPT-->
@@ -176,13 +177,21 @@
 
 	<!--Modals [ HELPER ]-->
 	<script src="{$basedomain}js/demo/jshelper.js"></script>
-	<script src="{$basedomain}js/globalHelper.js"></script>
+	 <script src="{$basedomain}js/globalHelper.js"></script> 
 
 	<!--Form Wizard [ SAMPLE ]-->
 	<script src="{$basedomain}js/demo/form-wizard.js"></script>
+  <script type="text/javascript" src="{$basedomain}js/bootstrap-colorpalette.js" charset="utf-8"></script>
+	
 	<script>
 		{literal}
 		$('.selectpicker').selectpicker();
+
+		 function toggleDiv(divId) {
+
+                 $("#"+divId).toggle("slow");
+
+              }
 		{/literal}
 	</script>
 </head>

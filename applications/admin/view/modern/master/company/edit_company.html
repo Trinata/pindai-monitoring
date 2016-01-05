@@ -43,7 +43,7 @@
 		</ul>
 
 		<div class="tab-content">
-		<form class="form-horizontal" action="{$basedomain}company/input" method="post">
+		<form class="form-horizontal" method="post">
 		<div class="row form-horizontal">
 
 			<div class="col-md-12">
@@ -51,7 +51,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Nama</label>
 					<div class="col-sm-8">
-							<input name="name" type="text" class="form-control" placeholder="Nama">
+							<input name="name" type="text" class="form-control" placeholder="Nama" value="{$data.name}">
 					</div>
 				</div>
 			</div>
@@ -65,7 +65,7 @@
 					<label class="col-sm-4 control-label" for="">Industry</label>
 					<div class="col-sm-8">
 						<select name ="id_industry" class="selectpicker">						
-							<option>--Pilih Industry--</option>
+							<option value="{$data.industry_id}">{$data.industry_id}</option>
 							
 							{if !empty($data_industry)}
 							{foreach $data_industry as $key=> $value}
@@ -90,7 +90,7 @@
 					<label class="col-sm-4 control-label" for="">Template</label>
 					<div class="col-sm-8">
 						<select name = "template" class="selectpicker">
-							<option>--Pilih Template--</option>
+							<option value="{$data.template}">{$data.template}</option>
 
 							{if !empty($data_template)}
 							{foreach $data_template as $key=> $value}
@@ -114,7 +114,7 @@
 					<label class="col-sm-4 control-label" for="">Bg Color</label>
 					<div class="col-sm-8">
 						<div class="input-group">
-							<input name="bg_color" type="text" id="selected-color1" class="form-control" placeholder="Bg Color">
+							<input name="bg_color" type="text" id="selected-color1" class="form-control" placeholder="Bg Color" value="{$data.color.bg_color}">
 							<span class="input-group-addon">
 							  <a class="dropdown-toggle" data-toggle="dropdown">Choose Color</a>
 							  <ul class="dropdown-menu">
@@ -122,8 +122,6 @@
 							  </ul>
 							</span>
 						</div>
-
-
 					</div>
 				</div>
 			</div>
@@ -137,7 +135,7 @@
 					<label class="col-sm-4 control-label" for="">Header Color</label>
 					<div class="col-sm-8">
 						<div class="input-group">
-							<input name="header_color" type="text" id="selected-color2" class="form-control" placeholder="Header Color">
+							<input name="header_color" type="text" id="selected-color2" class="form-control" placeholder="Header Color"  value="{$data.color.header_color}">
 							<span class="input-group-addon">
 							  <a class="dropdown-toggle" data-toggle="dropdown">Choose Color</a>
 							  <ul class="dropdown-menu">
@@ -158,7 +156,7 @@
 					<label class="col-sm-4 control-label" for="">Stack Color</label>
 					<div class="col-sm-8">
 						<div class="input-group">
-							<input name="stack_color" type="text" id="selected-color3" class="form-control" placeholder="Stack Color">
+							<input name="stack_color" type="text" id="selected-color3" class="form-control" placeholder="Stack Color"  value="{$data.color.stack_color}">
 							<span class="input-group-addon">
 							  <a class="dropdown-toggle" data-toggle="dropdown">Choose Color</a>
 							  <ul class="dropdown-menu">
@@ -180,7 +178,7 @@
 					<label class="col-sm-4 control-label" for="">Font Color Menu</label>
 					<div class="col-sm-8">
 						<div class="input-group">
-							<input name="menu_color" type="text" id="selected-color4" class="form-control" placeholder="Font Color Menu">
+							<input name="menu_color" type="text" id="selected-color4" class="form-control" placeholder="Font Color Menu"  value="{$data.color.menu_color}">
 							<span class="input-group-addon">
 							  <a class="dropdown-toggle" data-toggle="dropdown">Choose Color</a>
 							  <ul class="dropdown-menu">
@@ -201,7 +199,7 @@
 					<label class="col-sm-4 control-label" for="">Font Color Menu Selected</label>
 					<div class="col-sm-8">
 						<div class="input-group">
-							<input name="menu_sel_color" type="text" id="selected-color5" class="form-control" placeholder="Font Color Menu Selected">
+							<input name="menu_sel_color" type="text" id="selected-color5" class="form-control" placeholder="Font Color Menu Selected"  value="{$data.color.menu_sel_color}">
 							<span class="input-group-addon">
 							  <a class="dropdown-toggle" data-toggle="dropdown">Choose Color</a>
 							  <ul class="dropdown-menu">
@@ -222,7 +220,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Email</label>
 					<div class="col-sm-8">
-							<input name="email" type="text" class="form-control" placeholder="Email">
+							<input name="email" type="text" class="form-control" placeholder="Email" value="{$data.email}">
 					</div>
 				</div>
 			</div>
@@ -485,6 +483,7 @@
 					<label class="col-sm-4 control-label" for="">Login Page</label>
 					<div class="col-sm-8">
 						<select name="login_page" class="selectpicker">
+							<option value="{$data.file.login_page}" >{$data.file.login_page}</option>
 							<option value="default" >Default</option>
 							<option value="full image" >Full Image</option>
 						</select>
@@ -500,6 +499,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Logo</label>
 					<div class="col-sm-8">
+						<label class="col-sm-4 control-label" for="">{$data.logo}</label>
 						<span class="pull-left btn btn-default btn-file ">
 							Browse File Logo... <input name="logo" type="file" >
 						</span>
@@ -516,6 +516,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Login</label>
 					<div class="col-sm-8">
+					<label class="col-sm-4 control-label" for="">{$data.file.login}</label>
 						<span class="pull-left btn btn-default btn-file ">
 							Browse File Login... <input name="login" type="file" >
 						</span>
@@ -532,6 +533,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Logo PDF</label>
 					<div class="col-sm-8">
+						<label class="col-sm-4 control-label" for="">{$data.file.logo_pdf}</label>
 						<span class="pull-left btn btn-default btn-file ">
 							Browse File Logo PDF... <input name="logo_pdf" type="file" >
 						</span>
@@ -548,7 +550,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label" for="">Description</label>
 					<div class="col-sm-8">
-						<textarea name="description" class="form-control"></textarea>
+						<textarea name="description" class="form-control">{$data.description}</textarea>
 					</div>
 				</div>
 			</div>
@@ -572,30 +574,3 @@
 <!--===================================================-->
 <!--End page content-->
 
-
-<script>
-  $('#colorpalette1').colorPalette()
-          .on('selectColor', function(e) {
-            $('#selected-color1').val(e.color);
-          });
-
-  $('#colorpalette2').colorPalette()
-          .on('selectColor', function(e) {
-            $('#selected-color2').val(e.color);
-          });
-
-  $('#colorpalette3').colorPalette()
-          .on('selectColor', function(e) {
-            $('#selected-color3').val(e.color);
-          });
-
-  $('#colorpalette4').colorPalette()
-          .on('selectColor', function(e) {
-            $('#selected-color4').val(e.color);
-          });
-
-  $('#colorpalette5').colorPalette()
-          .on('selectColor', function(e) {
-            $('#selected-color5').val(e.color);
-          });
-</script>

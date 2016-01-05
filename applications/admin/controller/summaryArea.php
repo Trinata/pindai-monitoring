@@ -21,12 +21,11 @@ class summaryArea extends Controller {
 	public function loadmodule()
 	{
 		
-		// $this->contentHelper = $this->loadModel('contentHelper');
+		$this->contentHelper = $this->loadModel('contentHelper');
 	}
 	
 	public function index(){
 		
-
 		return $this->loadView($this->folder."summaryArea");
 
 	}
@@ -36,7 +35,13 @@ class summaryArea extends Controller {
 		return $this->loadView($this->folder."create_summaryArea");
 
 	}
+	public function input(){
+		pr($_POST);
+		exit;
 
+		return $this->loadView($this->folder."create_summaryArea");
+
+	}
 	public function search(){
 		
 

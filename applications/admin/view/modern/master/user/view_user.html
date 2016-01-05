@@ -47,10 +47,10 @@
 								</ul>
 
 								<div class="tab-content">
-								<form class="form-horizontal" action="{$basedomain}user/input" method="post">
+								<form class="form-horizontal" action="{$basedomain}user" method="post">
 								<div class="panel">
 									<div class="panel-heading">
-										<h3 class="panel-title"><i>UPDATE ACCOUNT</i></h3>
+										<h3 class="panel-title"><i>FIELD ACCOUNT</i></h3>
 									</div>
 									<div class="panel-body">
 
@@ -60,7 +60,7 @@
 													<label class="col-sm-3 control-label" for="">Name *</label>
 													<div class="col-sm-4">
 														
-													<input name="name" type="text" class="form-control" >
+													<label class="col-sm-3 control-label" for="">{$data.name}</label>
 													</div>
 												</div>
 											</div>
@@ -72,23 +72,11 @@
 													<label class="col-sm-3 control-label" for="">Username *</label>
 													<div class="col-sm-4">
 														
-													<input name="username" type="text" class="form-control" >
+													<label class="col-sm-3 control-label" for="">{$data.username}</label>
 													</div>
 												</div>
 											</div>
 										</div>
-										<div class="row form-horizontal">
-											<div class="col-md-8">
-												<div class="form-group">
-													<label class="col-sm-3 control-label" for="">Password </label>
-													<div class="col-sm-9">
-													<input name="password" type="password" class="form-control" >
-													</div>
-												</div>
-											</div>
-										</div>
-
-										<div class="row form-horizontal">
 
 										<div class="row form-horizontal">
 											<div class="col-md-8">
@@ -96,7 +84,7 @@
 													<label class="col-sm-3 control-label" for="">Email *</label>
 													<div class="col-sm-4">
 														
-													<input name="email" type="text" class="form-control" >
+													<label class="col-sm-3 control-label" for="">{$data.email}</label>
 													</div>
 												</div>
 											</div>
@@ -108,7 +96,7 @@
 													<label class="col-sm-3 control-label" for="">Phone *</label>
 													<div class="col-sm-4">
 														
-													<input name="phone" type="text" class="form-control" >
+													<label class="col-sm-3 control-label" for="">{$data.hp.phone}</label>
 													</div>
 												</div>
 											</div>
@@ -120,62 +108,44 @@
 													<label class="col-sm-3 control-label" for="">Mobile phone *</label>
 													<div class="col-sm-4">
 														
-													<input name="mobilephone" type="text" class="form-control" >
+													<label class="col-sm-3 control-label" for="">{$data.hp.mobilephone}</label>
 													</div>
 												</div>
 											</div>
 										</div>
 
-										<div class="form-group">
+										<div class="row form-horizontal">
 											<div class="col-md-8">
+											<div class="form-group">
 												<label class="col-sm-3 control-label" for="">Role</label>
 												<div class="col-sm-9">
-													<select name = "role" class="selectpicker">
-														<option>--Pilih Role--</option>
-														<option value="1">Admin</option>
-														<option value="2">Tracker</option>
-														<option value="3">Publisher</option>
-														<option value="4">User</option>
-													</select>
+													<label class="col-sm-3 control-label" for="">{$data.hak_akses}</label>
 												</div>
 												</div>
 											</div>
 										</div>
 
-										<div class="form-group">
+										<div class="row form-horizontal">
 											<div class="col-md-8">
+												<div class="form-group">
 												<label class="col-sm-3 control-label" for="">Status</label>
 												<div class="col-sm-9">
-													<select name = "status" class="selectpicker">
-														<option>--Pilih Status--</option>
-														<option value="1">Active</option>
-														<option value="0">In Active</option>
-													</select>
+													<label class="col-sm-3 control-label" for="">{$data.n_status}</label>
 												</div>
 												</div>
 											</div>
 										</div>
 
-										<div class="form-group">
+										<div class="row form-horizontal">
 											<div class="col-md-8">
+												<div class="form-group">
 												<label class="col-sm-3 control-label" for="">Perusahaan</label>
 												<div class="col-sm-9">
-													<select name = "perusahaan" class="selectpicker">
-														<option>--Pilih Perusahaan--</option>
-
-														{if !empty($data)}
-														{foreach $data as $key=> $value}
-
-														<option value="{$value.name}">{$value.name}</option>
-
-														{/foreach}
-														{/if}
-
-													</select>
+													<label class="col-sm-3 control-label" for="">{$data.institusi}</label>
 												</div>
 												</div>
 											</div>
-										<!-- </div> -->
+										</div>
 
 										<div class="row form-horizontal">
 											<div class="col-md-8">
@@ -183,7 +153,7 @@
 													<label class="col-sm-3 control-label" for="">Address</label>
 													<div class="col-sm-4">
 														
-													<textarea name="address" type="text" class="form-control" > </textarea>
+													<label class="col-sm-3 control-label" for="">{$data.alamat}</label>
 													</div>
 												</div>
 											</div>
@@ -194,17 +164,14 @@
 												<div class="form-group">
 													<label class="col-sm-3 control-label" for="">Photo</label>
 													<div class="col-sm-9">
-													<span class="pull-left btn btn-default btn-file ">
-														Browse File Photo... <input name="photo" type="file">
-													</span>
+													<label class="col-sm-3 control-label" for="">{$data.image}</label>
 													</div>
 												</div>
 											</div>
 										</div>
 									<div class="panel-footer text-left mar-btm">
-										<button type="submit" class="btn btn-info">Create</button>
-
-										<button type="reset" class="btn btn-default">Cancel</button>
+										<button type="submit" class="btn btn-info">Back</button>
+									</div>
 									</div>
 									</form>
 								</div>
@@ -222,4 +189,5 @@
 </div>
 <!--===================================================-->
 <!--End page content-->
+
 
