@@ -1,0 +1,230 @@
+<!-- PAGE TOP -->
+<section class="page-title">
+	<div class="container">
+
+		<header>
+
+			<ul class="breadcrumb"><!-- breadcrumb -->
+				<li><a href="{$basedomain}">Home</a></li>
+				<li class="active">Statistic</li>
+			</ul><!-- /breadcrumb -->
+
+			<h2><!-- Page Title -->
+				Statistic
+			</h2><!-- /Page Title -->
+
+		</header>
+
+	</div>			
+</section>
+<!-- /PAGE TOP -->
+
+
+<!-- CONTENT -->
+<section>
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-md-3">
+
+				<!-- SIDE NAV -->
+				<h4>Statistic Pemberitaan</h4>
+				<ul class="side-nav list-group" id="sidebar-nav">
+					<li class="list-group-item"><a href="#">Mindshare</a></li>
+					<li class="list-group-item active"><a href="#">Media Category</a></li>
+					<li class="list-group-item"><a href="#">Topic</a></li>
+					<li class="list-group-item"><a href="#">Tv program</a></li>
+					<li class="list-group-item"><a href="#">Rubric</a></li>
+					<li class="list-group-item"><a href="#">Media</a></li>
+				</ul>
+				<!-- /SIDE NAV -->
+
+			</div>
+
+			<div class="col-md-9">
+				
+				<form action="#" method="post" class="sky-form boxed">
+					<fieldset>
+						<section>
+							<div class="col-md-6"> 
+		                        <label class="input" style="margin-top:10px">
+		                            <i class="icon-append fa fa-calendar"></i>
+		                            <input class="demo-rangepicker" type="text" name="date" value="" placeholder="Publish Date"><!-- change demo-rangepicker to datepicker on rangepicker -->
+		                        </label>
+	                        </div>
+
+	                        <div class="col-md-4">
+								<select class="selectpicker" title="Pilih Kategori Media" data-live-search="true" data-width="100%">
+									<option data-hidden="true"></option>
+									<option>Family</option>
+									<option>Friend</option>
+									<option>Partner</option>
+									<option>Sport</option>
+									<option>Movie</option>
+									<option>Documents</option>
+									<option>Music</option>
+									<option>Video</option>
+								</select>
+							</div>
+	                    
+							<button class="btn btn-success pull-left">Filter </button>
+						</section>
+
+					</fieldset>
+
+				</form>
+
+				<div class="sky-form boxed">
+					<header>Statistic Lini Waktu Kategori Media Pemberitaan</header>
+					<div id="demo-morris-line" style="height:212px"></div>
+
+				</div>
+
+				<div class="sky-form boxed">
+					<header>Statistic Kumulatif Kategori Media Pemberitaan</header>
+					<div id="demo-morris-bar" style="height:212px"></div>
+
+				</div>
+
+				<div class="sky-form boxed">
+					<header>Statistic Lini Waktu Prosentase Kategori Media Pemberitaan</header>
+					<div id="demo-morris-donut" style="height:212px"></div>
+
+				</div>
+
+				<div class="sky-form boxed">
+					<header>Statistic Kumulatif Kategori Media Pemberitaan Berdasarkan Muatan Berita</header>
+					<div id="demo-morris-bar2" style="height:212px"></div>
+
+				</div>
+			
+			</div>
+		</div>
+
+	</div>
+</section>
+<!-- /CONTENT -->
+
+{literal}
+<script type="text/javascript">
+	$(document).ready(function() {
+		// MORRIS LINE CHART
+		// =================================================================
+		// Require MorrisJS Chart
+		// -----------------------------------------------------------------
+		// http://morrisjs.github.io/morris.js/
+		// =================================================================
+		Morris.Line({
+			element: 'demo-morris-line',
+			data: [
+			{ y: '2006', a: 100, b: 90 },
+			{ y: '2007', a: 75,  b: 65 },
+			{ y: '2008', a: 50,  b: 40 },
+			{ y: '2009', a: 75,  b: 65 },
+			{ y: '2010', a: 50,  b: 40 },
+			{ y: '2011', a: 75,  b: 65 },
+			{ y: '2012', a: 100, b: 90 }
+			],
+			xkey: 'y',
+			ykeys: ['a', 'b'],
+			labels: ['Series A', 'Series B'],
+			gridEnabled: true,
+			gridLineColor: '#ddd',
+			lineWidth: 2,
+			parseTime: false,
+			resize:true,
+			hideHover: 'auto'
+		});
+
+		// MORRIS BAR CHART
+		// =================================================================
+		// Require MorrisJS Chart
+		// -----------------------------------------------------------------
+		// http://morrisjs.github.io/morris.js/
+		// =================================================================
+		Morris.Bar({
+			element: 'demo-morris-bar',
+			data: [
+				{ y: '1', a: 100, b: 90 },
+				{ y: '2', a: 75,  b: 65 },
+				{ y: '3', a: 20,  b: 15 },
+				{ y: '5', a: 50,  b: 40 },
+				{ y: '6', a: 75,  b: 95 },
+				{ y: '7', a: 15,  b: 65 },
+				{ y: '8', a: 70,  b: 100 },
+				{ y: '9', a: 100, b: 70 },
+				{ y: '10', a: 50, b: 70 },
+				{ y: '11', a: 20, b: 10 },
+				{ y: '12', a: 40, b: 90 },
+				{ y: '13', a: 70, b: 30 },
+				{ y: '14', a: 50, b: 50 },
+				{ y: '15', a: 100, b: 90 }
+			],
+			xkey: 'y',
+			ykeys: ['a', 'b'],
+			labels: ['Series A', 'Series B'],
+			gridEnabled: false,
+			gridLineColor: 'transparent',
+			barColors: ['#177bbb', '#afd2f0'],
+			resize:true,
+			hideHover: 'auto'
+		});
+
+		// MORRIS DONUT CHART
+		// =================================================================
+		// Require MorrisJS Chart
+		// -----------------------------------------------------------------
+		// http://morrisjs.github.io/morris.js/
+		// =================================================================
+		Morris.Donut({
+			element: 'demo-morris-donut',
+			data: [
+				{label: "Download Sales", value: 12},
+				{label: "In-Store Sales", value: 30},
+				{label: "Mail-Order Sales", value: 20}
+			],
+			colors: [
+				'#a6c600',
+				'#177bbb',
+				'#afd2f0'
+			],
+			resize:true
+		});
+
+		// MORRIS BAR CHART
+		// =================================================================
+		// Require MorrisJS Chart
+		// -----------------------------------------------------------------
+		// http://morrisjs.github.io/morris.js/
+		// =================================================================
+		Morris.Bar({
+			element: 'demo-morris-bar2',
+			data: [
+				{ y: '1', a: 100, b: 90 },
+				{ y: '2', a: 75,  b: 65 },
+				{ y: '3', a: 20,  b: 15 },
+				{ y: '5', a: 50,  b: 40 },
+				{ y: '6', a: 75,  b: 95 },
+				{ y: '7', a: 15,  b: 65 },
+				{ y: '8', a: 70,  b: 100 },
+				{ y: '9', a: 100, b: 70 },
+				{ y: '10', a: 50, b: 70 },
+				{ y: '11', a: 20, b: 10 },
+				{ y: '12', a: 40, b: 90 },
+				{ y: '13', a: 70, b: 30 },
+				{ y: '14', a: 50, b: 50 },
+				{ y: '15', a: 100, b: 90 }
+			],
+			xkey: 'y',
+			ykeys: ['a', 'b'],
+			labels: ['Series A', 'Series B'],
+			gridEnabled: false,
+			gridLineColor: 'transparent',
+			resize:true,
+			hideHover: 'auto'
+		});
+
+	})
+</script>
+{/literal}

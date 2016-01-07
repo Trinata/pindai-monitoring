@@ -71,14 +71,14 @@
                                 HOME <span>depan</span>
                             </a>
                         </li>
-                        <li class="">
-                            <a class="" href="#">ARCHIEVE <span>arsip</span></a>
+                        <li class="{if $page.page eq 'archieve'}active{/if}">
+                            <a class="" href="{$basedomain}archieve">ARCHIEVE <span>arsip</span></a>
                         </li>
-                        <li class="">
-                            <a class="" href="#">STATISTIC <span>grafik</span></a>
+                        <li class="{if $page.page eq 'statistic'}active{/if}">
+                            <a class="" href="{$basedomain}statistic">STATISTIC <span>grafik</span></a>
                         </li>
-                        <li class="">
-                            <a class="" href="#">SUMMARY <span>tv</span></a>
+                        <li class="{if $page.page eq 'summary'}active{/if}">
+                            <a class="" href="{$basedomain}summary">SUMMARY <span>tv</span></a>
                         </li>
                         <li class="{if $page.page eq 'report'}active{/if}">
                             <a class="" href="{$basedomain}report">REPORT <span>cetak</span></a>

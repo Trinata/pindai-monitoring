@@ -8,6 +8,9 @@
 $ROUTES = array(
 		'home',
                 'user',
-                'report'            
+                'report',
+                'archieve',
+                'statistic',
+                'summary'            
                 );
 ?>
