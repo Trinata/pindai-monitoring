@@ -98,7 +98,7 @@ class mindShare extends Controller {
 					// foreach($datamind as $value){
 						if 	($datamind['data']) $datamind['color'] = unserialize($datamind['data']);
 					// }
-	
+					
 					// pr($datamind);
 					$this->view->assign('datamind',$datamind);
 				}		

@@ -255,14 +255,15 @@ class contentHelper extends Database {
     											data,
     											company_id,
     											sort,
-    											create_date
+    											create_date,
     											update_date) 
 										VALUES ('".$name."',
 												'".$description."',
 												'".$data."',
 												'".$company_id."',
 												'".$sort."',
-												'{$date}')";
+												'{$date}',
+                                                '{$date}')";
     	$exec = $this->query($query);	
 		if($exec) return 1; else pr('query gagal');
     }

@@ -77,9 +77,11 @@ class catMedia extends Controller {
 		global $CONFIG;
 			$id = $_GET ['id'];
 
+
 			if ($_POST == null){
 				$datacatmedia=$this->contentHelper->selectcatmedia($id);
 				
+				// pr($datacatmedia);
 				if($datacatmedia){
 						if 	($datacatmedia['data']) $datacatmedia['color'] = unserialize($datacatmedia['data']);
 	

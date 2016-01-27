@@ -69,7 +69,7 @@ class media extends Controller {
 		$media_category =$_POST['media_category'];
 		$pic = $_POST['pic'];
 
-		$data = serialize(array('color'=>$_POST['datacol'], 'advprice'=>$_POST['dataadv']));		
+		$data = serialize(array('color'=>$_POST['color'], 'advprice'=>$_POST['advprice']));		
 
 		// pr($_POST);exit;
 		$insert=$this->contentHelper->inputmedia($name,$media_category,$pic,$data);
@@ -86,7 +86,7 @@ class media extends Controller {
 
 			$datamedia=$this->contentHelper->selectmedia($id);
 			
-			pr($datamedia); 
+			// pr($datamedia); 
 
 			if ($datamedia){	
 				foreach ($datamedia as $key => $value) {
@@ -97,7 +97,7 @@ class media extends Controller {
 						$datamedia[$key]['advprice'] = $unserial['advprice'];
 					}
 
-					pr($datamedia);
+					// pr($datamedia);
 				}
 
 				$this->view->assign('datamedia',$datamedia[0]);
@@ -122,15 +122,20 @@ class media extends Controller {
 
 				// pr ($datamedia); 
 				
-				if($datamedia){
-						if 	($datamedia['data']){
-							$datamedia['color'] = unserialize($datamedia['data']);
-							$datamedia['advprice'] = unserialize($datamedia['data']);
+				if ($datamedia){	
+				foreach ($datamedia as $key => $value) {
+					// pr(unserialize($value['data']));
+					if ($value['data']) {
+						$unserial = unserialize($value['data']);
+						$datamedia[$key]['color'] = $unserial['color'];
+						$datamedia[$key]['advprice'] = $unserial['advprice'];
 					}
-	
+
 					// pr($datamedia);
-					$this->view->assign('datamedia',$datamedia);
-				}		
+				}
+
+				$this->view->assign('datamedia',$datamedia[0]);
+			}		
 				
 				return $this->loadView($this->folder."edit_media");			
 			}
